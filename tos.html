@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#FFF4E8" />
-    <title>MeetCat Terms of Service</title>
+    <title data-i18n="tos.title">MeetCat Terms of Service</title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400&display=swap"
@@ -19,7 +19,12 @@
             <img class="logo" src="/meetcat-logo.png" alt="MeetCat" />
           </a>
           <div class="header-actions">
-            <button class="lang-switch" type="button" aria-label="Switch language">
+            <a class="github-link" href="https://github.com/onevcat/MeetCat" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <button class="lang-switch" type="button" data-i18n-aria="lang.switch" aria-label="Switch language">
               <span class="lang-icon material-symbols-rounded" aria-hidden="true">translate</span>
             </button>
           </div>
@@ -28,39 +33,39 @@
 
       <main>
         <section class="container legal-hero">
-          <h1>Terms of Service</h1>
-          <p>Effective Date: February 1, 2026</p>
+          <h1 data-i18n="tos.page_title">Terms of Service</h1>
+          <p data-i18n="tos.effective_date">Effective Date: February 1, 2026</p>
         </section>
 
         <section class="container legal-content">
           <div>
-            <h2>Acceptance of Terms</h2>
-            <p>
+            <h2 data-i18n="tos.acceptance.title">Acceptance of Terms</h2>
+            <p data-i18n="tos.acceptance.text">
               By accessing or using MeetCat, you agree to these Terms of Service. If you do not
               agree, do not use the product.
             </p>
           </div>
 
           <div>
-            <h2>Service Description</h2>
-            <p>
+            <h2 data-i18n="tos.service.title">Service Description</h2>
+            <p data-i18n="tos.service.text">
               MeetCat provides local tools that help you manage and join Google Meet sessions more
               efficiently. The product operates locally and does not provide any networked services.
             </p>
           </div>
 
           <div>
-            <h2>No Warranty</h2>
-            <p>
-              MeetCat is provided on an “as is” and “as available” basis. We make no warranties of
+            <h2 data-i18n="tos.warranty.title">No Warranty</h2>
+            <p data-i18n="tos.warranty.text">
+              MeetCat is provided on an "as is" and "as available" basis. We make no warranties of
               any kind, express or implied, including fitness for a particular purpose or
               non-infringement.
             </p>
           </div>
 
           <div>
-            <h2>Limitations of Liability</h2>
-            <p>
+            <h2 data-i18n="tos.liability.title">Limitations of Liability</h2>
+            <p data-i18n="tos.liability.text">
               To the maximum extent permitted by law, MeetCat and its author are not liable for any
               indirect, incidental, special, consequential, or punitive damages, or any loss of
               data, profits, revenue, or business opportunities.
@@ -68,8 +73,8 @@
           </div>
 
           <div>
-            <h2>Meeting Reliability</h2>
-            <p>
+            <h2 data-i18n="tos.reliability.title">Meeting Reliability</h2>
+            <p data-i18n="tos.reliability.text">
               You are responsible for confirming your meeting schedules and attendance. We do not
               guarantee that you will successfully join or attend any meeting, or that you will not
               miss a meeting.
@@ -77,31 +82,42 @@
           </div>
 
           <div>
-            <h2>Third-Party Services and Trademarks</h2>
-            <p>
+            <h2 data-i18n="tos.technical.title">Technical Limitations</h2>
+            <p data-i18n="tos.technical.text">
+              While we strive to avoid bugs and errors, we cannot guarantee that the software will
+              be completely free of defects. We are not responsible for any issues caused by bugs
+              or programming errors. Additionally, due to changes in Google Meet's specifications
+              or UI, our service may become unavailable or interrupted, for which we also assume no
+              responsibility.
+            </p>
+          </div>
+
+          <div>
+            <h2 data-i18n="tos.thirdparty.title">Third-Party Services and Trademarks</h2>
+            <p data-i18n="tos.thirdparty.text">
               Google Meet is a trademark of Google LLC. MeetCat is not affiliated with Google. Any
               use of third-party services is subject to their terms.
             </p>
           </div>
 
           <div>
-            <h2>Attribution</h2>
+            <h2 data-i18n="tos.attribution.title">Attribution</h2>
             <p>
-              App icon attribution:
-              <a href="https://www.flaticon.com/free-icons/kitty" title="kitty icons">
+              <span data-i18n="tos.attribution.text">App icon attribution:</span>
+              <a href="https://www.flaticon.com/free-icons/kitty" title="kitty icons" data-i18n="tos.attribution.link">
                 Kitty icons created by Freepik - Flaticon
               </a>
             </p>
           </div>
 
           <div>
-            <h2>Contact</h2>
-            <p>Questions about these terms can be sent to onev@onevcat.com.</p>
+            <h2 data-i18n="tos.contact.title">Contact</h2>
+            <p data-i18n="tos.contact.text">Questions about these terms can be sent to onev@onevcat.com.</p>
           </div>
 
           <div>
-            <h2>Changes</h2>
-            <p>
+            <h2 data-i18n="tos.changes.title">Changes</h2>
+            <p data-i18n="tos.changes.text">
               We may update these terms from time to time. The effective date above will be updated
               when changes are posted.
             </p>
@@ -115,16 +131,18 @@
             <a href="/#top">MeetCat</a>
             <span class="footer-separator" aria-hidden="true">|</span>
             <span class="footer-credit">
-              Made with <span class="footer-heart">♥</span> by
+              <span data-i18n="footer.made_with">Made with</span> <span class="footer-heart">♥</span> <span data-i18n="footer.by">by</span>
               <a href="https://x.com/onevcat">@onevcat</a>
             </span>
           </div>
           <div class="footer-links">
-            <a href="/privacy.html">Privacy</a>
-            <a href="/tos.html">Terms</a>
+            <a href="/privacy.html" data-i18n="nav.privacy">Privacy</a>
+            <a href="/tos.html" data-i18n="nav.terms">Terms</a>
           </div>
         </div>
       </footer>
     </div>
+
+    <script src="/src/i18n.js"></script>
   </body>
 </html>

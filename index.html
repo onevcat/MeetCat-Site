@@ -25,7 +25,12 @@
             <img class="logo" src="/meetcat-logo.png" alt="MeetCat" />
           </a>
           <div class="header-actions">
-            <button class="lang-switch" type="button" aria-label="切换语言">
+            <a class="github-link" href="https://github.com/onevcat/MeetCat" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <button class="lang-switch" type="button" data-i18n-aria="lang.switch" aria-label="切换语言">
               <span class="lang-icon material-symbols-rounded" aria-hidden="true">translate</span>
             </button>
           </div>
@@ -36,34 +41,33 @@
         <section class="hero">
           <div class="container hero-grid">
             <div class="hero-text">
-              <span class="chip chip-orange">准时自动加入</span>
               <h1 class="hero-title">
                 <span class="hero-title-line">MeetCat</span>
-                <span class="hero-title-line hero-title-slogan">再也不错过任何会议</span>
+                <span class="hero-title-line hero-title-slogan" data-i18n="hero.slogan">再也不错过任何会议</span>
               </h1>
-              <p class="hero-subtitle">自动识别 Google Meet 日程，倒计时提醒，一键自动加入。</p>
+              <p class="hero-subtitle" data-i18n="hero.subtitle">自动识别 Google Meet 日程，倒计时提醒，一键自动加入。</p>
               <div class="cta-buttons">
-                <a class="btn btn-primary" href="" data-disabled="true" aria-disabled="true">
+                <a class="btn btn-primary" href="" data-disabled="true" aria-disabled="true" data-i18n="hero.cta.chrome">
                   下载 Chrome 扩展
                 </a>
-                <a class="btn btn-secondary" href="" data-disabled="true" aria-disabled="true">
+                <a class="btn btn-secondary" href="" data-disabled="true" aria-disabled="true" data-i18n="hero.cta.app">
                   下载 App（macOS）
                 </a>
               </div>
               <div class="hero-notes">
-                <span>免费 · 轻量 · 无广告 · Windows 稍后推出</span>
+                <span data-i18n="hero.notes">免费 · 开源 · 轻量 · 无广告 | Windows 稍后推出</span>
               </div>
             </div>
 
             <div class="hero-visual">
               <div class="float-cluster">
                 <div class="float-surface">
-                  <div class="overlay-card overlay-home" aria-label="MeetCat 首页浮层">
+                  <div class="overlay-card overlay-home" data-i18n-aria="nav.home" aria-label="MeetCat">
                     <img class="overlay-icon" src="/meetcat-icon.png" alt="MeetCat" />
                     <div class="overlay-copy">
-                      <div class="overlay-title">下一场：Product Brainstorm</div>
+                      <div class="overlay-title"><span data-i18n="ui.next_meeting">下一场：</span>Product Brainstorm</div>
                       <div class="overlay-subtitle">
-                        <span>还有 </span>
+                        <span data-i18n="ui.time_remaining">还有 </span>
                         <span class="overlay-countdown">31:59</span>
                       </div>
                     </div>
@@ -85,29 +89,29 @@
         <section class="features">
           <div class="container">
             <div class="section-header">
-              <h2>核心功能，保持轻松</h2>
-              <p>智能加入，让你的日常会议节奏更加从容</p>
+              <h2 data-i18n="features.title">核心功能，保持轻松</h2>
+              <p data-i18n="features.subtitle">智能加入，让你的日常会议节奏更加从容</p>
             </div>
             <div class="feature-grid">
               <article class="feature-card tone-orange">
                 <span class="feature-badge">AUTO</span>
-                <h3>智能自动加入</h3>
-                <p>提前 X 分钟打开会议页，错过会议？不存在。</p>
+                <h3 data-i18n="features.auto_join.title">智能自动加入</h3>
+                <p data-i18n="features.auto_join.desc">提前 X 分钟打开会议页，错过会议？不存在。</p>
               </article>
               <article class="feature-card tone-pink">
                 <span class="feature-badge">COUNT</span>
-                <h3>倒计时 + 随时取消</h3>
-                <p>会议准备的温柔倒计时，调整还是取消，随心所欲</p>
+                <h3 data-i18n="features.countdown.title">倒计时 + 随时取消</h3>
+                <p data-i18n="features.countdown.desc">会议准备的温柔倒计时，调整还是取消，随心所欲</p>
               </article>
               <article class="feature-card tone-blue">
                 <span class="feature-badge">QUIET</span>
-                <h3>麦克风/摄像头默认状态</h3>
-                <p>进会前自动设定，让你的加入安静就绪。</p>
+                <h3 data-i18n="features.mic_cam.title">麦克风/摄像头默认状态</h3>
+                <p data-i18n="features.mic_cam.desc">进会前自动设定，让你的加入安静就绪。</p>
               </article>
               <article class="feature-card tone-mint">
                 <span class="feature-badge">FILTER</span>
-                <h3>会议过滤</h3>
-                <p>提前设置，不想自动进的会议？直接跳过。</p>
+                <h3 data-i18n="features.filter.title">会议过滤</h3>
+                <p data-i18n="features.filter.desc">提前设置，不想自动进的会议？直接跳过。</p>
               </article>
             </div>
           </div>
@@ -116,44 +120,44 @@
         <section class="ui-showcase">
           <div class="container">
             <div class="section-header">
-              <h2>可确认的会议状态界面</h2>
-              <p>计时提醒、加入前确认与状态提示，清晰确认会议和状态，一切尽在掌握。</p>
+              <h2 data-i18n="showcase.title">可确认的会议状态界面</h2>
+              <p data-i18n="showcase.subtitle">计时提醒、加入前确认与状态提示，清晰确认会议和状态，一切尽在掌握。</p>
             </div>
             <div class="showcase-grid">
               <div class="showcase-item">
-                <span class="chip chip-blue">首页浮层</span>
-                <div class="overlay-card overlay-home" aria-label="MeetCat 首页浮层">
+                <span class="chip chip-blue" data-i18n="showcase.home_overlay">首页浮层</span>
+                <div class="overlay-card overlay-home" data-i18n-aria="showcase.home_overlay" aria-label="首页浮层">
                   <img class="overlay-icon" src="/meetcat-icon.png" alt="MeetCat" />
                   <div class="overlay-copy">
-                    <div class="overlay-title">下一场：Product Brainstorm</div>
+                    <div class="overlay-title"><span data-i18n="ui.next_meeting">下一场：</span>Product Brainstorm</div>
                     <div class="overlay-subtitle">
-                      <span>还有 </span>
+                      <span data-i18n="ui.time_remaining">还有 </span>
                       <span class="overlay-countdown">31:59</span>
                     </div>
                   </div>
                 </div>
-                <p class="caption">在 Meet 首页直接显示下一场会议倒计时。</p>
+                <p class="caption" data-i18n="showcase.home_caption">在 Meet 首页直接显示下一场会议倒计时。</p>
               </div>
               <div class="showcase-item">
-                <span class="chip chip-pink">自动加入</span>
-                <div class="overlay-card overlay-countdown" aria-label="MeetCat 自动加入倒计时">
+                <span class="chip chip-pink" data-i18n="showcase.auto_join">自动加入</span>
+                <div class="overlay-card overlay-countdown" data-i18n-aria="showcase.auto_join" aria-label="自动加入倒计时">
                   <img class="overlay-icon" src="/meetcat-icon.png" alt="MeetCat" />
                   <div class="overlay-copy overlay-copy-wide">
                     <div class="overlay-title">
-                      自动加入还有 <span class="overlay-countdown">17 秒</span>
+                      <span data-i18n="ui.auto_join_in">自动加入还有 </span><span class="overlay-countdown">17 <span data-i18n="ui.seconds">秒</span></span>
                     </div>
                     <div class="overlay-progress">
                       <span class="overlay-progress-fill" style="width: 72%;"></span>
                     </div>
                   </div>
-                  <button class="overlay-cancel" type="button">取消</button>
+                  <button class="overlay-cancel" type="button" data-i18n="ui.cancel">取消</button>
                 </div>
-                <p class="caption">自动加入前的倒计时，随时可取消。</p>
+                <p class="caption" data-i18n="showcase.auto_join_caption">自动加入前的倒计时，随时可取消。</p>
               </div>
               <div class="showcase-item">
-                <span class="chip chip-orange">状态栏显示</span>
+                <span class="chip chip-orange" data-i18n="showcase.tray">状态栏显示</span>
                 <div class="tray-stack">
-                  <div class="tray-strip" aria-label="MeetCat 状态栏显示">
+                  <div class="tray-strip" data-i18n-aria="showcase.tray" aria-label="状态栏显示">
                     <div class="tray-row tray-row-top">
                       <span class="apple-logo" aria-hidden="true"></span>
                       <span>Status Bar</span>
@@ -164,7 +168,7 @@
                     </div>
                   </div>
                 </div>
-                <p class="caption">状态栏显示下一场会议时间。</p>
+                <p class="caption" data-i18n="showcase.tray_caption">状态栏显示下一场会议时间。</p>
               </div>
             </div>
           </div>
@@ -173,38 +177,38 @@
         <section class="how-it-works">
           <div class="container">
             <div class="section-header">
-              <h2>工作原理</h2>
-              <p>三步完成，安静又可靠。</p>
+              <h2 data-i18n="how.title">工作原理</h2>
+              <p data-i18n="how.subtitle">三步完成，安静又可靠。</p>
             </div>
             <div class="steps">
               <div class="step-card">
                 <div class="step-index">01</div>
                 <div>
-                  <h3>识别会议</h3>
-                  <p>在 Meet 首页解析会议列表。</p>
+                  <h3 data-i18n="how.step1.title">识别会议</h3>
+                  <p data-i18n="how.step1.desc">在 Meet 首页解析会议列表。</p>
                 </div>
               </div>
               <div class="step-card">
                 <div class="step-index">02</div>
                 <div>
-                  <h3>安排触发时间</h3>
-                  <p>根据设置决定何时进入会议页。</p>
+                  <h3 data-i18n="how.step2.title">安排触发时间</h3>
+                  <p data-i18n="how.step2.desc">根据设置决定何时进入会议页。</p>
                 </div>
               </div>
               <div class="step-card">
                 <div class="step-index">03</div>
                 <div>
-                  <h3>自动加入</h3>
-                  <p>倒计时结束后自动点击加入。</p>
+                  <h3 data-i18n="how.step3.title">自动加入</h3>
+                  <p data-i18n="how.step3.desc">倒计时结束后自动点击加入。</p>
                 </div>
               </div>
             </div>
             <div class="privacy-note">
-              <h3>隐私与数据安全</h3>
+              <h3 data-i18n="privacy.note.title">隐私与数据安全</h3>
               <div class="privacy-grid">
-                <div class="privacy-pill">不收集也不保存任何信息</div>
-                <div class="privacy-pill">纯本地运行，无联网部分</div>
-                <div class="privacy-pill">解析与处理都在本地完成</div>
+                <div class="privacy-pill" data-i18n="privacy.pill1">不收集也不保存任何信息</div>
+                <div class="privacy-pill" data-i18n="privacy.pill2">纯本地运行，无联网部分</div>
+                <div class="privacy-pill" data-i18n="privacy.pill3">解析与处理都在本地完成</div>
               </div>
             </div>
           </div>
@@ -213,26 +217,26 @@
         <section class="platforms">
           <div class="container">
             <div class="section-header">
-              <h2>两种形态，一样顺手</h2>
-              <p>浏览器轻量，桌面稳定。按你的节奏选择。</p>
+              <h2 data-i18n="platforms.title">两种形态，一样顺手</h2>
+              <p data-i18n="platforms.subtitle">浏览器轻量，桌面稳定。按你的节奏选择。</p>
             </div>
             <div class="platform-grid">
               <article class="platform-card tone-blue">
-                <h3>Chrome 扩展</h3>
-                <p>浏览器内轻量运行，自动打开会议页面。</p>
+                <h3 data-i18n="platforms.chrome.title">Chrome 扩展</h3>
+                <p data-i18n="platforms.chrome.desc">浏览器内轻量运行，自动打开会议页面。</p>
                 <ul>
-                  <li>自动触发加入</li>
-                  <li>Meet 首页提示</li>
-                  <li>同步设置</li>
+                  <li data-i18n="platforms.chrome.feat1">自动触发加入</li>
+                  <li data-i18n="platforms.chrome.feat2">Meet 首页提示</li>
+                  <li data-i18n="platforms.chrome.feat3">同步设置</li>
                 </ul>
               </article>
               <article class="platform-card tone-orange">
-                <h3>桌面 App</h3>
-                <p>稳定的桌面体验，系统托盘随时可见。</p>
+                <h3 data-i18n="platforms.desktop.title">桌面 App</h3>
+                <p data-i18n="platforms.desktop.desc">稳定的桌面体验，系统托盘随时可见。</p>
                 <ul>
-                  <li>托盘状态展示</li>
-                  <li>开机自启</li>
-                  <li>独立设置窗口</li>
+                  <li data-i18n="platforms.desktop.feat1">托盘状态展示</li>
+                  <li data-i18n="platforms.desktop.feat2">开机自启</li>
+                  <li data-i18n="platforms.desktop.feat3">独立设置窗口</li>
                 </ul>
               </article>
             </div>
@@ -242,14 +246,14 @@
         <section class="cta-band">
           <div class="container cta-inner">
             <div>
-              <h2>准备好不再错过会议了吗？</h2>
-              <p>安静工作，只在你需要时出场。</p>
+              <h2 data-i18n="cta.title">准备好不再错过会议了吗？</h2>
+              <p data-i18n="cta.subtitle">安静工作，只在你需要时出场。</p>
             </div>
             <div class="cta-buttons stacked">
-              <a class="btn btn-primary" href="" data-disabled="true" aria-disabled="true">
+              <a class="btn btn-primary" href="" data-disabled="true" aria-disabled="true" data-i18n="hero.cta.chrome">
                 下载 Chrome 扩展
               </a>
-              <a class="btn btn-secondary" href="" data-disabled="true" aria-disabled="true">
+              <a class="btn btn-secondary" href="" data-disabled="true" aria-disabled="true" data-i18n="hero.cta.app">
                 下载 App（macOS）
               </a>
             </div>
@@ -263,16 +267,18 @@
             <a href="/#top">MeetCat</a>
             <span class="footer-separator" aria-hidden="true">|</span>
             <span class="footer-credit">
-              Made with <span class="footer-heart">♥</span> by
+              <span data-i18n="footer.made_with">Made with</span> <span class="footer-heart">♥</span> <span data-i18n="footer.by">by</span>
               <a href="https://x.com/onevcat">@onevcat</a>
             </span>
           </div>
           <div class="footer-links">
-            <a href="/privacy.html">隐私</a>
-            <a href="/tos.html">条款</a>
+            <a href="/privacy.html" data-i18n="nav.privacy">隐私</a>
+            <a href="/tos.html" data-i18n="nav.terms">条款</a>
           </div>
         </div>
       </footer>
     </div>
+
+    <script src="/src/i18n.js"></script>
   </body>
 </html>
