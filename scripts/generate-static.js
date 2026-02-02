@@ -458,12 +458,7 @@ const languageNames = {
   ko: '한국어',
 };
 
-const languageFlags = {
-  zh: '🇨🇳',
-  en: '🇺🇸',
-  ja: '🇯🇵',
-  ko: '🇰🇷',
-};
+
 
 const langConfig = {
   en: { dir: '', htmlLang: 'en' },
@@ -485,7 +480,7 @@ function generateLangDropdown(currentLang) {
     const baseUrl = getBaseUrl(lang);
     const href = baseUrl || '/';
     const activeClass = lang === currentLang ? ' active' : '';
-    return `<a class="lang-dropdown-item${activeClass}" href="${href}"><span class="lang-flag">${languageFlags[lang]}</span><span>${languageNames[lang]}</span></a>`;
+    return `<a class="lang-dropdown-item${activeClass}" href="${href}">${languageNames[lang]}</a>`;
   }).join('\n              ');
   
   return `<div class="lang-dropdown">
@@ -503,7 +498,7 @@ function processHtml(html, lang) {
     return `data-i18n="${key}">${translated}<`;
   });
   
-  html = html.replace(/data-i18n-aria="([^"]+)"/g, (match, key) => {
+  html = html.replace(/data-i18n-aria="([^"]+)"[^>]*aria-label="[^"]*"/g, (match, key) => {
     const translated = t(lang, key);
     return `data-i18n-aria="${key}" aria-label="${translated}"`;
   });
@@ -513,6 +508,8 @@ function processHtml(html, lang) {
     return `<title>${translated}</title>`;
   });
   
+  html = html.replace(/<div class="lang-dropdown">[\s\S]*?<\/div>/g, '');
+  
   html = html.replace(
     /<button class="lang-switch"[^>]*>[\s\S]*?<\/button>/,
     `<button class="lang-switch" type="button" aria-label="${t(lang, 'lang.switch')}">
@@ -520,6 +517,8 @@ function processHtml(html, lang) {
             </button>
             ${generateLangDropdown(lang)}`
   );
+
+  html = html.replace(/\n\s*\n\s*\n/g, '\n\n');
   
   html = html.replace(/href="\/privacy\.html"/g, `href="${baseUrl}/privacy.html"`);
   html = html.replace(/href="\/tos\.html"/g, `href="${baseUrl}/tos.html"`);
@@ -529,8 +528,10 @@ function processHtml(html, lang) {
   html = html.replace(/<script[^>]*src="\/src\/i18n\.js"[^>]*><\/script>/g, '');
   html = html.replace(/<script type="module" src="\/src\/i18n\.js"><\/script>/g, '');
   
+  html = html.replace(/<script>\s*document\.querySelector\('\.lang-switch'\)[\s\S]*?<\/script>\s*/g, '');
+  
   html = html.replace(
-    '</head>',
+    '</body>',
     `  <script>
     document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -540,7 +541,7 @@ function processHtml(html, lang) {
       document.querySelector('.lang-dropdown')?.classList.remove('open');
     });
   </script>
-</head>`
+</body>`
   );
   
   return html;

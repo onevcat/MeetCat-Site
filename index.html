@@ -16,25 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400&display=swap"
     />
     <link rel="stylesheet" href="/src/styles.css" />
-    <script>
-    document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      document.querySelector('.lang-dropdown')?.classList.toggle('open');
-    });
-    document.addEventListener('click', () => {
-      document.querySelector('.lang-dropdown')?.classList.remove('open');
-    });
-  </script>
-  <script>
-    document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      document.querySelector('.lang-dropdown')?.classList.toggle('open');
-    });
-    document.addEventListener('click', () => {
-      document.querySelector('.lang-dropdown')?.classList.remove('open');
-    });
-  </script>
-</head>
+    </head>
   <body id="top">
     <div class="page">
       <header class="site-header">
@@ -52,17 +34,12 @@
               <span class="lang-icon material-symbols-rounded" aria-hidden="true">translate</span>
             </button>
             <div class="lang-dropdown">
-              <a class="lang-dropdown-item active" href="/"><span class="lang-flag">🇺🇸</span><span>English</span></a>
-              <a class="lang-dropdown-item" href="/ja"><span class="lang-flag">🇯🇵</span><span>日本語</span></a>
-              <a class="lang-dropdown-item" href="/zh"><span class="lang-flag">🇨🇳</span><span>中文</span></a>
-              <a class="lang-dropdown-item" href="/ko"><span class="lang-flag">🇰🇷</span><span>한국어</span></a>
+              <a class="lang-dropdown-item active" href="/">English</a>
+              <a class="lang-dropdown-item" href="/ja">日本語</a>
+              <a class="lang-dropdown-item" href="/zh">中文</a>
+              <a class="lang-dropdown-item" href="/ko">한국어</a>
             </div>
-            <div class="lang-dropdown">
-              <a class="lang-dropdown-item active" href="/"><span class="lang-flag">🇺🇸</span><span>English</span></a>
-              <a class="lang-dropdown-item" href="/ja"><span class="lang-flag">🇯🇵</span><span>日本語</span></a>
-              <a class="lang-dropdown-item" href="/zh"><span class="lang-flag">🇨🇳</span><span>中文</span></a>
-              <a class="lang-dropdown-item" href="/ko"><span class="lang-flag">🇰🇷</span><span>한국어</span></a>
-            </div>
+
           </div>
         </div>
       </header>
@@ -88,7 +65,7 @@
             <div class="hero-visual">
               <div class="float-cluster">
                 <div class="float-surface">
-                  <div class="overlay-card overlay-home" data-i18n-aria="nav.home" aria-label="MeetCat" aria-label="MeetCat" aria-label="MeetCat">
+                  <div class="overlay-card overlay-home" data-i18n-aria="nav.home" aria-label="MeetCat">
                     <img class="overlay-icon" src="/meetcat-icon.png" alt="MeetCat" />
                     <div class="overlay-copy">
                       <div class="overlay-title"><span data-i18n="ui.next_meeting">Next: </span>Product Brainstorm</div>
@@ -152,7 +129,7 @@
             <div class="showcase-grid">
               <div class="showcase-item">
                 <span class="chip chip-blue" data-i18n="showcase.home_overlay">Home Overlay</span>
-                <div class="overlay-card overlay-home" data-i18n-aria="showcase.home_overlay" aria-label="Home Overlay" aria-label="Home Overlay" aria-label="首页浮层">
+                <div class="overlay-card overlay-home" data-i18n-aria="showcase.home_overlay" aria-label="Home Overlay">
                   <img class="overlay-icon" src="/meetcat-icon.png" alt="MeetCat" />
                   <div class="overlay-copy">
                     <div class="overlay-title"><span data-i18n="ui.next_meeting">Next: </span>Product Brainstorm</div>
@@ -166,7 +143,7 @@
               </div>
               <div class="showcase-item">
                 <span class="chip chip-pink" data-i18n="showcase.auto_join">Auto-Join</span>
-                <div class="overlay-card overlay-countdown" data-i18n-aria="showcase.auto_join" aria-label="Auto-Join" aria-label="Auto-Join" aria-label="自动加入倒计时">
+                <div class="overlay-card overlay-countdown" data-i18n-aria="showcase.auto_join" aria-label="Auto-Join">
                   <img class="overlay-icon" src="/meetcat-icon.png" alt="MeetCat" />
                   <div class="overlay-copy overlay-copy-wide">
                     <div class="overlay-title">
@@ -183,7 +160,7 @@
               <div class="showcase-item">
                 <span class="chip chip-orange" data-i18n="showcase.tray">Tray Display</span>
                 <div class="tray-stack">
-                  <div class="tray-strip" data-i18n-aria="showcase.tray" aria-label="Tray Display" aria-label="Tray Display" aria-label="状态栏显示">
+                  <div class="tray-strip" data-i18n-aria="showcase.tray" aria-label="Tray Display">
                     <div class="tray-row tray-row-top">
                       <span class="apple-logo" aria-hidden="true"></span>
                       <span>Status Bar</span>
@@ -301,6 +278,14 @@
       </footer>
     </div>
 
-    
-  </body>
+        <script>
+    document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.querySelector('.lang-dropdown')?.classList.toggle('open');
+    });
+    document.addEventListener('click', () => {
+      document.querySelector('.lang-dropdown')?.classList.remove('open');
+    });
+  </script>
+</body>
 </html>

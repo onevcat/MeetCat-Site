@@ -10,25 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400&display=swap"
     />
     <link rel="stylesheet" href="/src/styles.css" />
-    <script>
-    document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      document.querySelector('.lang-dropdown')?.classList.toggle('open');
-    });
-    document.addEventListener('click', () => {
-      document.querySelector('.lang-dropdown')?.classList.remove('open');
-    });
-  </script>
-  <script>
-    document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      document.querySelector('.lang-dropdown')?.classList.toggle('open');
-    });
-    document.addEventListener('click', () => {
-      document.querySelector('.lang-dropdown')?.classList.remove('open');
-    });
-  </script>
-</head>
+    </head>
   <body class="legal-page" id="top">
     <div class="page">
       <header class="site-header">
@@ -46,17 +28,12 @@
               <span class="lang-icon material-symbols-rounded" aria-hidden="true">translate</span>
             </button>
             <div class="lang-dropdown">
-              <a class="lang-dropdown-item active" href="/"><span class="lang-flag">🇺🇸</span><span>English</span></a>
-              <a class="lang-dropdown-item" href="/ja"><span class="lang-flag">🇯🇵</span><span>日本語</span></a>
-              <a class="lang-dropdown-item" href="/zh"><span class="lang-flag">🇨🇳</span><span>中文</span></a>
-              <a class="lang-dropdown-item" href="/ko"><span class="lang-flag">🇰🇷</span><span>한국어</span></a>
+              <a class="lang-dropdown-item active" href="/">English</a>
+              <a class="lang-dropdown-item" href="/ja">日本語</a>
+              <a class="lang-dropdown-item" href="/zh">中文</a>
+              <a class="lang-dropdown-item" href="/ko">한국어</a>
             </div>
-            <div class="lang-dropdown">
-              <a class="lang-dropdown-item active" href="/"><span class="lang-flag">🇺🇸</span><span>English</span></a>
-              <a class="lang-dropdown-item" href="/ja"><span class="lang-flag">🇯🇵</span><span>日本語</span></a>
-              <a class="lang-dropdown-item" href="/zh"><span class="lang-flag">🇨🇳</span><span>中文</span></a>
-              <a class="lang-dropdown-item" href="/ko"><span class="lang-flag">🇰🇷</span><span>한국어</span></a>
-            </div>
+
           </div>
         </div>
       </header>
@@ -128,6 +105,14 @@
       </footer>
     </div>
 
-    
-  </body>
+        <script>
+    document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.querySelector('.lang-dropdown')?.classList.toggle('open');
+    });
+    document.addEventListener('click', () => {
+      document.querySelector('.lang-dropdown')?.classList.remove('open');
+    });
+  </script>
+</body>
 </html>
