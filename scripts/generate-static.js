@@ -1,21 +1,23 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const rootDir = path.resolve(__dirname, '..');
+
 const translations = {
   zh: {
-    // 导航/通用
     'nav.home': 'MeetCat',
     'nav.privacy': '隐私',
     'nav.terms': '条款',
     'lang.switch': '切换语言',
     'footer.made_with': 'Made with',
     'footer.by': 'by',
-
-    // Hero 区域
     'hero.slogan': '再也不错过任何会议',
     'hero.subtitle': '自动识别 Google Meet 日程，倒计时提醒，完全自动加入。',
     'hero.cta.chrome': '下载 Chrome 扩展',
     'hero.cta.app': '下载 App（macOS）',
     'hero.notes': '免费 · 开源 · 轻量 · 无广告 | Windows 稍后推出',
-
-    // UI 展示浮层
     'ui.next_meeting': '下一场：',
     'ui.in_progress': '进行中：',
     'ui.no_upcoming': '暂无即将开始的会议',
@@ -26,8 +28,6 @@ const translations = {
     'ui.cancel': '取消',
     'ui.tray_status': '状态栏显示',
     'ui.tray_next': '下一场：',
-
-    // 功能特性
     'features.title': '核心功能，保持轻松',
     'features.subtitle': '智能加入，让你的日常会议节奏更加从容',
     'features.auto_join.title': '智能自动加入',
@@ -38,8 +38,6 @@ const translations = {
     'features.mic_cam.desc': '进会前自动设定，让你的加入安静就绪。',
     'features.filter.title': '会议过滤',
     'features.filter.desc': '提前设置，不想自动进的会议？直接跳过。',
-
-    // UI 展示区域
     'showcase.title': '可确认的会议状态界面',
     'showcase.subtitle': '计时提醒、加入前确认与状态提示，清晰确认会议和状态，一切尽在掌握。',
     'showcase.home_overlay': '首页浮层',
@@ -48,8 +46,6 @@ const translations = {
     'showcase.auto_join_caption': '自动加入前的倒计时，随时可取消。',
     'showcase.tray': '状态栏显示',
     'showcase.tray_caption': '状态栏显示下一场会议时间。',
-
-    // 工作原理
     'how.title': '工作原理',
     'how.subtitle': '三步完成，安静又可靠。',
     'how.step1.title': '识别会议',
@@ -58,14 +54,10 @@ const translations = {
     'how.step2.desc': '根据设置决定何时进入会议页。在会议准备页面确认麦克风和摄像头的设置状态。进入会议准备页面后，将开始倒计时。',
     'how.step3.title': '自动加入',
     'how.step3.desc': '倒计时结束后，系统将自动按照你的设置加入会议。告别因遗忘会议而造成的迟到，让每一次会议都能准时开始。',
-
-    // 隐私说明
     'privacy.note.title': '隐私与数据安全',
     'privacy.pill1': '不收集也不保存任何信息',
     'privacy.pill2': '纯本地运行，无联网部分',
     'privacy.pill3': '解析与处理都在本地完成',
-
-    // 平台
     'platforms.title': '两种形态，一样顺手',
     'platforms.subtitle': '浏览器轻量，桌面稳定。按你的节奏选择。',
     'platforms.chrome.title': 'Chrome 扩展',
@@ -78,12 +70,8 @@ const translations = {
     'platforms.desktop.feat1': '托盘状态展示',
     'platforms.desktop.feat2': '开机自启',
     'platforms.desktop.feat3': '独立设置窗口',
-
-    // CTA 区域
     'cta.title': '准备好不再错过会议了吗？',
     'cta.subtitle': '安静工作，只在你需要时出场。',
-
-    // 隐私政策页面
     'privacy.title': 'MeetCat 隐私政策',
     'privacy.page_title': '隐私政策',
     'privacy.effective_date': '生效日期：2026年2月1日',
@@ -103,8 +91,6 @@ const translations = {
     'privacy.contact.text': '如有疑问，请联系 onev@onevcat.com。',
     'privacy.changes.title': '政策变更',
     'privacy.changes.text': '如更新此政策，我们将修订上述生效日期并在此页面发布更新版本。',
-
-    // 服务条款页面
     'tos.title': 'MeetCat 服务条款',
     'tos.page_title': '服务条款',
     'tos.effective_date': '生效日期：2026年2月1日',
@@ -132,22 +118,17 @@ const translations = {
   },
 
   en: {
-    // Nav/General
     'nav.home': 'MeetCat',
     'nav.privacy': 'Privacy',
     'nav.terms': 'Terms',
     'lang.switch': 'Switch language',
     'footer.made_with': 'Made with',
     'footer.by': 'by',
-
-    // Hero
     'hero.slogan': 'Never miss a meeting again',
     'hero.subtitle': 'Auto-detect Google Meet schedules, countdown reminders, fully automatic join.',
     'hero.cta.chrome': 'Download Chrome Extension',
     'hero.cta.app': 'Download App (macOS)',
     'hero.notes': 'Free · Open Source · Lightweight · No Ads | Windows coming soon',
-
-    // UI Overlay
     'ui.next_meeting': 'Next: ',
     'ui.in_progress': 'In progress: ',
     'ui.no_upcoming': 'No upcoming meetings',
@@ -158,8 +139,6 @@ const translations = {
     'ui.cancel': 'Cancel',
     'ui.tray_status': 'Status Bar Display',
     'ui.tray_next': 'Next: ',
-
-    // Features
     'features.title': 'Core Features, Stay Relaxed',
     'features.subtitle': 'Smart joining that keeps your daily meeting rhythm calm and collected',
     'features.auto_join.title': 'Smart Auto-Join',
@@ -170,8 +149,6 @@ const translations = {
     'features.mic_cam.desc': 'Auto-set before joining, so you enter quietly ready.',
     'features.filter.title': 'Meeting Filter',
     'features.filter.desc': 'Set in advance—meetings you don\'t want to auto-join? Skip them.',
-
-    // Showcase
     'showcase.title': 'Clear Meeting Status Interface',
     'showcase.subtitle': 'Timer reminders, pre-join confirmation, and status indicators—everything under control.',
     'showcase.home_overlay': 'Home Overlay',
@@ -180,8 +157,6 @@ const translations = {
     'showcase.auto_join_caption': 'Countdown before auto-join, cancel anytime.',
     'showcase.tray': 'Tray Display',
     'showcase.tray_caption': 'See next meeting time in the status bar.',
-
-    // How It Works
     'how.title': 'How It Works',
     'how.subtitle': 'Three steps, quiet and reliable.',
     'how.step1.title': 'Detect Meetings',
@@ -190,14 +165,10 @@ const translations = {
     'how.step2.desc': 'Decide when to open the meeting page based on settings. Confirm microphone and camera settings on the meeting preparation page. Once you enter the meeting preparation page, the countdown will begin.',
     'how.step3.title': 'Auto-Join',
     'how.step3.desc': 'When the countdown ends, the system will automatically join the meeting according to your settings. Say goodbye to being late due to forgotten meetings—ensure every meeting starts on time.',
-
-    // Privacy Note
     'privacy.note.title': 'Privacy & Data Security',
     'privacy.pill1': 'No data collection or storage',
     'privacy.pill2': 'Runs locally, no network',
     'privacy.pill3': 'Parsing & processing local only',
-
-    // Platforms
     'platforms.title': 'Two Forms, Same Smooth Experience',
     'platforms.subtitle': 'Browser is light, desktop is stable. Choose your pace.',
     'platforms.chrome.title': 'Chrome Extension',
@@ -210,12 +181,8 @@ const translations = {
     'platforms.desktop.feat1': 'Tray status display',
     'platforms.desktop.feat2': 'Auto-start on boot',
     'platforms.desktop.feat3': 'Dedicated meeting window',
-
-    // CTA
     'cta.title': 'Ready to never miss a meeting?',
     'cta.subtitle': 'Works quietly, only appears when you need it.',
-
-    // Privacy Policy
     'privacy.title': 'MeetCat Privacy Policy',
     'privacy.page_title': 'Privacy Policy',
     'privacy.effective_date': 'Effective Date: February 1, 2026',
@@ -235,8 +202,6 @@ const translations = {
     'privacy.contact.text': 'If you have questions about this policy, contact us at onev@onevcat.com.',
     'privacy.changes.title': 'Changes',
     'privacy.changes.text': 'If we update this policy, we will revise the effective date above and post the updated version on this page.',
-
-    // Terms of Service
     'tos.title': 'MeetCat Terms of Service',
     'tos.page_title': 'Terms of Service',
     'tos.effective_date': 'Effective Date: February 1, 2026',
@@ -264,22 +229,17 @@ const translations = {
   },
 
   ja: {
-    // ナビ/共通
     'nav.home': 'MeetCat',
     'nav.privacy': 'プライバシー',
     'nav.terms': '利用規約',
     'lang.switch': '言語を切り替え',
     'footer.made_with': 'Made with',
     'footer.by': 'by',
-
-    // ヒーロー
     'hero.slogan': 'もうミーティングを見逃さない',
     'hero.subtitle': 'Google Meet の予定を自動認識、カウントダウン通知、完全自動参加。',
     'hero.cta.chrome': 'Chrome 拡張機能をダウンロード',
     'hero.cta.app': 'アプリをダウンロード（macOS）',
     'hero.notes': '無料 · オープンソース · 軽量 · 広告なし | Windows 版近日公開',
-
-    // UI オーバーレイ
     'ui.next_meeting': '次：',
     'ui.in_progress': '進行中：',
     'ui.no_upcoming': '予定されているミーティングはありません',
@@ -290,8 +250,6 @@ const translations = {
     'ui.cancel': 'キャンセル',
     'ui.tray_status': 'ステータスバー表示',
     'ui.tray_next': '次：',
-
-    // 機能
     'features.title': 'コア機能、リラックスして利用',
     'features.subtitle': 'スマート参加で、日常のミーティングリズムを穏やかに',
     'features.auto_join.title': 'スマート自動参加',
@@ -302,8 +260,6 @@ const translations = {
     'features.mic_cam.desc': '参加前に自動設定、静かに準備完了。',
     'features.filter.title': 'ミーティングフィルタ',
     'features.filter.desc': '事前に設定—自動参加したくないミーティング？スキップします。',
-
-    // ショーケース
     'showcase.title': '確認できるミーティング状態インターフェース',
     'showcase.subtitle': 'タイマー通知、参加前確認、状態表示—すべて掌握できます。',
     'showcase.home_overlay': 'ホームオーバーレイ',
@@ -312,8 +268,6 @@ const translations = {
     'showcase.auto_join_caption': '自動参加前のカウントダウン、いつでもキャンセル可能。',
     'showcase.tray': 'トレイ表示',
     'showcase.tray_caption': 'ステータスバーに次のミーティング時間を表示。',
-
-    // 仕組み
     'how.title': '仕組み',
     'how.subtitle': '3ステップで、静かで信頼できる。',
     'how.step1.title': 'ミーティングを認識',
@@ -322,14 +276,10 @@ const translations = {
     'how.step2.desc': '設定に基づいてミーティングページを開く時間を決定。ミーティング準備ページでマイクとカメラの設定状態を確認します。ミーティング準備ページに入ると、カウントダウンが開始されます。',
     'how.step3.title': '自動参加',
     'how.step3.desc': 'カウントダウンが終了すると、システムはあなたの設定に従って自動的にミーティングに参加します。ミーティングを忘れて遅刻することとお別れして、毎回のミーティングを時間通りに始めましょう。',
-
-    // プライバシー注記
     'privacy.note.title': 'プライバシーとデータセキュリティ',
     'privacy.pill1': '情報を収集・保存しません',
     'privacy.pill2': 'ローカルで動作、ネットワークなし',
     'privacy.pill3': '解析・処理はすべてローカルで完了',
-
-    // プラットフォーム
     'platforms.title': '2つの形態、同じ使いやすさ',
     'platforms.subtitle': 'ブラウザは軽量、デスクトップは安定。あなたのペースで選択。',
     'platforms.chrome.title': 'Chrome 拡張機能',
@@ -342,127 +292,106 @@ const translations = {
     'platforms.desktop.feat1': 'トレイ状態表示',
     'platforms.desktop.feat2': '起動時自動起動',
     'platforms.desktop.feat3': '専用設定ウィンドウ',
-
-    // CTA
     'cta.title': 'もうミーティングを見逃さない準備はできましたか？',
     'cta.subtitle': '静かに動作、必要な時だけ登場。',
-
-    // プライバシーポリシー
     'privacy.title': 'MeetCat プライバシーポリシー',
     'privacy.page_title': 'プライバシーポリシー',
     'privacy.effective_date': '発効日：2026年2月1日',
     'privacy.overview.title': '概要',
-    'privacy.overview.text': 'MeetCat はローカル実行で設計されています。個人情報や使用データを収集、保存、送信することはありません。',
+    'privacy.overview.text': 'MeetCat はローカルで動作するよう設計されています。個人情報や使用データを収集、保存、送信することはありません。',
     'privacy.collect.title': '収集するデータ',
     'privacy.collect.text': 'データを収集しません。',
     'privacy.local.title': 'ローカル処理',
-    'privacy.local.text': 'すべての解析と処理はお使いのデバイスで行われます。ネットワーク機能は含まれていません。',
+    'privacy.local.text': 'すべての解析と処理はお使いのデバイス上で行われます。ネットワーク機能は含まれていません。',
     'privacy.cookies.title': 'Cookie と分析',
-    'privacy.cookies.text': 'Cookie、分析、追跡技術を使用しません。',
-    'privacy.thirdparty.title': '第三者サービス',
-    'privacy.thirdparty.text': 'アプリのダウンロードは GitHub Releases でホストされています。それ以外の第三者サービスとは連携していません。',
+    'privacy.cookies.text': 'Cookie、分析、トラッキング技術を使用しません。',
+    'privacy.thirdparty.title': 'サードパーティサービス',
+    'privacy.thirdparty.text': 'アプリのダウンロードは GitHub Releases でホストされています。それ以外のサードパーティサービスとは統合していません。',
     'privacy.accounts.title': 'アカウント',
-    'privacy.accounts.text': 'MeetCat はアカウントや認証を必要としません。ただし、Google Meet を利用するには Google アカウントが必要です。詳細は Google Meet の製品ページをご覧ください。',
+    'privacy.accounts.text': 'MeetCat はアカウントや認証を必要としません。ただし、Google Meet を使用するには Google アカウントが必要です。詳細は Google Meet の製品ページをご確認ください。',
     'privacy.contact.title': 'お問い合わせ',
-    'privacy.contact.text': 'ご質問がある場合は onev@onevcat.com までご連絡ください。',
+    'privacy.contact.text': 'このポリシーについてご質問がある場合は、onev@onevcat.com までご連絡ください。',
     'privacy.changes.title': 'ポリシーの変更',
-    'privacy.changes.text': 'このポリシーを更新する場合、上記の発効日を改訂し、このページに更新版を掲載します。',
-
-    // 利用規約
+    'privacy.changes.text': 'このポリシーを更新した場合、上記の発効日を改訂し、このページに更新版を掲載します。',
     'tos.title': 'MeetCat 利用規約',
     'tos.page_title': '利用規約',
     'tos.effective_date': '発効日：2026年2月1日',
-    'tos.acceptance.title': '規約の同意',
-    'tos.acceptance.text': 'MeetCat にアクセスまたは使用することにより、本利用規約に同意したものとみなされます。同意されない場合は、本製品を使用しないでください。',
+    'tos.acceptance.title': '規約への同意',
+    'tos.acceptance.text': 'MeetCat にアクセスまたは使用することで、本利用規約に同意したことになります。同意しない場合は、製品を使用しないでください。',
     'tos.service.title': 'サービスの説明',
-    'tos.service.text': 'MeetCat は、Google Meet セッションの管理と参加をより効率的に行うためのローカルツールを提供します。製品はローカルで動作し、ネットワークサービスは提供しません。',
-    'tos.warranty.title': '免責事項',
-    'tos.warranty.text': 'MeetCat は「現状有姿」および「利用可能な状態」で提供されます。特定目的への適合性や非侵害を含む、いかなる明示的または黙示的な保証も行いません。',
+    'tos.service.text': 'MeetCat は、Google Meet セッションをより効率的に管理・参加するためのローカルツールを提供します。製品はローカルで動作し、ネットワークサービスは提供しません。',
+    'tos.warranty.title': '保証の免責',
+    'tos.warranty.text': 'MeetCat は「現状のまま」「利用可能な状態で」提供されます。特定目的への適合性や非侵害を含め、明示的または黙示的な保証は一切行いません。',
     'tos.liability.title': '責任の制限',
-    'tos.liability.text': '法律で許容される最大限の範囲で、MeetCat およびその作者は、間接的、偶発的、特別、結果的、または懲罰的な損害、またはデータ、利益、収益、または商機の損失について責任を負いません。',
+    'tos.liability.text': '法律で許容される最大限の範囲で、MeetCat およびその作者は、間接的、偶発的、特別、結果的、または懲罰的損害、またはデータ、利益、収益、ビジネス機会の損失について責任を負いません。',
     'tos.reliability.title': 'ミーティングの信頼性',
-    'tos.reliability.text': 'ミーティングのスケジュールと出席の確認はあなたの責任です。ミーティングへの参加や出席が成功すること、またはミーティングを見逃さないことを保証しません。ミーティングフィルタ機能があるため、誤ってスキップしたり参加したりしないことも保証しません。',
+    'tos.reliability.text': 'ミーティングのスケジュールと出席の確認はお客様の責任です。ミーティングに正常に参加できること、またはミーティングを見逃さないことを保証しません。ミーティングフィルタ機能があるため、誤ってスキップしたり参加したりしないことも保証しません。',
     'tos.technical.title': '技術的制限',
-    'tos.technical.text': 'バグやエラーを避けるよう最善を尽くしていますが、ソフトウェアが完全に欠陥なく動作することを保証することはできません。バグやプログラミングエラーによる問題については責任を負いません。また、Google Meet の仕様変更や UI 変更により、当サービスが利用できなくなったり中断されたりする場合がありますが、これについても責任を負いません。',
-    'tos.thirdparty.title': '第三者サービスと商標',
-    'tos.thirdparty.text': 'Google Meet は Google LLC の商標です。MeetCat は Google と提携していません。第三者サービスの使用は、それらの規約に従います。',
-    'tos.attribution.title': '帰属',
-    'tos.attribution.text': 'アプリアイコンの帰属：',
-    'tos.attribution.link': 'Kitty アイコンは Freepik によって作成されました - Flaticon',
+    'tos.technical.text': 'バグやエラーを避けるよう努めていますが、ソフトウェアが完全に欠陥がないことを保証することはできません。バグやプログラミングエラーによる問題については責任を負いません。また、Google Meet の仕様変更や UI 変更により、サービスが利用できなくなったり中断したりする可能性があり、これについても責任を負いません。',
+    'tos.thirdparty.title': 'サードパーティサービスと商標',
+    'tos.thirdparty.text': 'Google Meet は Google LLC の商標です。MeetCat は Google とは関係ありません。サードパーティサービスの使用はそれらの規約に従います。',
+    'tos.attribution.title': 'アトリビューション',
+    'tos.attribution.text': 'アプリアイコンのアトリビューション：',
+    'tos.attribution.link': 'Kitty アイコンは Freepik 作成 - Flaticon',
     'tos.contact.title': 'お問い合わせ',
-    'tos.contact.text': 'これらの規約に関する質問は onev@onevcat.com までお送りください。',
+    'tos.contact.text': 'これらの規約についてのお問い合わせは onev@onevcat.com までお送りください。',
     'tos.changes.title': '規約の変更',
-    'tos.changes.text': 'これらの規約は随時更新される場合があります。変更が掲載されると、上記の発効日が更新されます。',
+    'tos.changes.text': 'これらの規約は随時更新される場合があります。変更が投稿されると、上記の発効日が更新されます。',
   },
 
   ko: {
-    // 내비/공통
     'nav.home': 'MeetCat',
     'nav.privacy': '개인정보',
-    'nav.terms': '이용약관',
+    'nav.terms': '약관',
     'lang.switch': '언어 전환',
     'footer.made_with': 'Made with',
     'footer.by': 'by',
-
-    // 히어로
     'hero.slogan': '더 이상 회의를 놓치지 마세요',
     'hero.subtitle': 'Google Meet 일정 자동 인식, 카운트다운 알림, 완전 자동 참여.',
     'hero.cta.chrome': 'Chrome 확장 프로그램 다운로드',
-    'hero.cta.app': '앱 다운로드（macOS）',
-    'hero.notes': '무료 · 오픈소스 · 경량 · 광고 없음 | Windows 버전 곧 출시',
-
-    // UI 오버레이
-    'ui.next_meeting': '다음：',
-    'ui.in_progress': '진행 중：',
+    'hero.cta.app': '앱 다운로드 (macOS)',
+    'hero.notes': '무료 · 오픈 소스 · 가벼움 · 광고 없음 | Windows 곧 출시',
+    'ui.next_meeting': '다음: ',
+    'ui.in_progress': '진행 중: ',
     'ui.no_upcoming': '예정된 회의 없음',
-    'ui.time_remaining': '남은 시간',
+    'ui.time_remaining': '후',
     'ui.countdown_suffix': '',
     'ui.auto_join_in': '자동 참여까지 ',
     'ui.seconds': '초',
     'ui.cancel': '취소',
-    'ui.tray_status': '상태 표시줄',
-    'ui.tray_next': '다음：',
-
-    // 기능
-    'features.title': '핵심 기능, 편안하게',
-    'features.subtitle': '스마트 참여로 일상적인 회의 리듬을 여유롭게',
+    'ui.tray_status': '상태 바 표시',
+    'ui.tray_next': '다음: ',
+    'features.title': '핵심 기능, 편안하게 유지',
+    'features.subtitle': '스마트한 참여로 일상의 회의 리듬을 차분하게',
     'features.auto_join.title': '스마트 자동 참여',
-    'features.auto_join.desc': 'X분 전에 회의 페이지 열기. 회의 놓치기? 없습니다.',
+    'features.auto_join.desc': 'X분 전에 회의 페이지 열기. 회의를 놓치다? 절대로.',
     'features.countdown.title': '카운트다운 + 언제든 취소',
-    'features.countdown.desc': '회의 준비를 위한 부드러운 카운트다운—조정하거나 취소하세요',
+    'features.countdown.desc': '회의 준비를 위한 부드러운 카운트다운—언제든 조정 또는 취소',
     'features.mic_cam.title': '마이크/카메라 기본 상태',
     'features.mic_cam.desc': '참여 전 자동 설정, 조용히 준비 완료.',
     'features.filter.title': '회의 필터',
-    'features.filter.desc': '미리 설정—자동 참여하고 싶지 않은 회의? 건너뛰세요.',
-
-    // 쇼케이스
+    'features.filter.desc': '미리 설정—자동 참여하고 싶지 않은 회의? 건너뛰기.',
     'showcase.title': '확인 가능한 회의 상태 인터페이스',
-    'showcase.subtitle': '타이머 알림, 참여 전 확인, 상태 표시—모든 것을 파악하세요.',
+    'showcase.subtitle': '타이머 알림, 참여 전 확인, 상태 표시—모든 것을 제어합니다.',
     'showcase.home_overlay': '홈 오버레이',
-    'showcase.home_caption': 'Meet 홈페이지에서 다음 회의 카운트다운을 직접 표시합니다.',
+    'showcase.home_caption': 'Meet 홈페이지에서 다음 회의 카운트다운을 직접 확인.',
     'showcase.auto_join': '자동 참여',
     'showcase.auto_join_caption': '자동 참여 전 카운트다운, 언제든 취소 가능.',
     'showcase.tray': '트레이 표시',
-    'showcase.tray_caption': '상태 표시줄에 다음 회의 시간을 표시합니다.',
-
-    // 작동 원리
-    'how.title': '작동 원리',
+    'showcase.tray_caption': '상태 바에서 다음 회의 시간 확인.',
+    'how.title': '작동 방식',
     'how.subtitle': '세 단계로, 조용하고 신뢰할 수 있습니다.',
-    'how.step1.title': '회의 인식',
-    'how.step1.desc': 'Meet 홈페이지에서 회의 목록을 파싱합니다. 확장 기능이 설치된 브라우저나 데스크톱 앱에서 Meet 홈페이지를 열어야 합니다. Google 계정으로 로그인한 후 Meet 홈페이지를 열고, 다음 회의 오버레이가 정상적으로 표시되는지 확인하세요.',
-    'how.step2.title': '트리거 시간 설정',
-    'how.step2.desc': '설정에 따라 회의 페이지를 열 시간을 결정합니다. 회의 준비 페이지에서 마이크와 카메라 설정 상태를 확인하세요. 회의 준비 페이지에 들어가면 카운트다운이 시작됩니다.',
+    'how.step1.title': '회의 감지',
+    'how.step1.desc': 'Meet 홈페이지에서 회의 목록을 파싱합니다. 확장 프로그램이 설치된 브라우저 또는 데스크톱 앱에서 Meet 홈페이지를 열어야 합니다. Google 계정에 로그인 후 Meet 홈페이지를 열고, 다음 회의 오버레이가 정상적으로 표시되는지 확인하세요.',
+    'how.step2.title': '트리거 예약',
+    'how.step2.desc': '설정에 따라 회의 페이지를 언제 열지 결정합니다. 회의 준비 페이지에서 마이크와 카메라 설정 상태를 확인합니다. 회의 준비 페이지에 들어가면 카운트다운이 시작됩니다.',
     'how.step3.title': '자동 참여',
-    'how.step3.desc': '카운트다운이 종료되면 시스템이 설정에 따라 자동으로 회의에 참여합니다. 회의를 잊어버려 지각하는 것과 작별하고, 모든 회의를 제시간에 시작하세요.',
-
-    // 개인정보 주의
+    'how.step3.desc': '카운트다운이 끝나면 시스템이 설정에 따라 자동으로 회의에 참여합니다. 잊어버린 회의로 인한 지각과 작별하고, 매 회의가 정시에 시작되도록 하세요.',
     'privacy.note.title': '개인정보 및 데이터 보안',
-    'privacy.pill1': '정보를 수집하거나 저장하지 않습니다',
+    'privacy.pill1': '데이터 수집 또는 저장 없음',
     'privacy.pill2': '로컬에서 실행, 네트워크 없음',
-    'privacy.pill3': '파싱 및 처리는 모두 로컬에서 완료',
-
-    // 플랫폼
-    'platforms.title': '두 가지 형태, 똑같이 편리',
+    'privacy.pill3': '파싱 및 처리는 로컬에서만',
+    'platforms.title': '두 가지 형태, 같은 매끄러운 경험',
     'platforms.subtitle': '브라우저는 가볍고, 데스크톱은 안정적입니다. 당신의 속도에 맞게 선택하세요.',
     'platforms.chrome.title': 'Chrome 확장 프로그램',
     'platforms.chrome.desc': '브라우저 내에서 가볍게 실행, 회의 페이지를 자동으로 엽니다.',
@@ -474,12 +403,8 @@ const translations = {
     'platforms.desktop.feat1': '트레이 상태 표시',
     'platforms.desktop.feat2': '부팅 시 자동 시작',
     'platforms.desktop.feat3': '전용 설정 창',
-
-    // CTA
-    'cta.title': '더 이상 회의를 놓치지 않을 준비가 되셨나요？',
+    'cta.title': '더 이상 회의를 놓치지 않을 준비가 되셨나요?',
     'cta.subtitle': '조용히 작동하며, 필요할 때만 나타납니다.',
-
-    // 개인정보 처리방침
     'privacy.title': 'MeetCat 개인정보 처리방침',
     'privacy.page_title': '개인정보 처리방침',
     'privacy.effective_date': '발효일: 2026년 2월 1일',
@@ -499,8 +424,6 @@ const translations = {
     'privacy.contact.text': '이 정책에 대해 궁금한 점이 있으면 onev@onevcat.com으로 문의하세요.',
     'privacy.changes.title': '정책 변경',
     'privacy.changes.text': '이 정책을 업데이트하면 위의 발효일을 수정하고 이 페이지에 업데이트된 버전을 게시합니다.',
-
-    // 이용약관
     'tos.title': 'MeetCat 이용약관',
     'tos.page_title': '이용약관',
     'tos.effective_date': '발효일: 2026년 2월 1일',
@@ -513,7 +436,7 @@ const translations = {
     'tos.liability.title': '책임 제한',
     'tos.liability.text': '법이 허용하는 최대 범위 내에서 MeetCat 및 그 저작자는 간접적, 우발적, 특별, 결과적 또는 징벌적 손해, 또는 데이터, 이익, 수익 또는 사업 기회의 손실에 대해 책임을 지지 않습니다.',
     'tos.reliability.title': '회의 신뢰성',
-    'tos.reliability.text': '회의 일정과 출석 확인은 사용자의 책임입니다. 회의에 성공적으로 참여하거나 출석할 것을 보장하지 않으며, 회의를 놓치지 않을 것을 보장하지 않습니다. 회의 필터 기능이 있으므로, 실수로 건 너뛰거나 참여하지 않는다고도 보장하지 않습니다.',
+    'tos.reliability.text': '회의 일정과 출석 확인은 사용자의 책임입니다. 회의에 성공적으로 참여하거나 출석할 것을 보장하지 않으며, 회의를 놓치지 않을 것을 보장하지 않습니다. 회의 필터 기능이 있으므로, 실수로 건너뛰거나 참여하지 않는다고도 보장하지 않습니다.',
     'tos.technical.title': '기술적 제한',
     'tos.technical.text': '버그와 오류를 피하기 위해 최선을 다하고 있지만, 소프트웨어가 완전히 결함 없이 작동한다고 보장할 수는 없습니다. 버그나 프로그래밍 오류로 인한 문제에 대해서는 책임을 지지 않습니다. 또한 Google Meet의 사양 변경이나 UI 변경으로 인해 서비스를 사용할 수 없거나 중단될 수 있으며, 이에 대해서도 책임을 지지 않습니다.',
     'tos.thirdparty.title': '제3자 서비스 및 상표',
@@ -528,7 +451,6 @@ const translations = {
   },
 };
 
-// Language names for display
 const languageNames = {
   zh: '中文',
   en: 'English',
@@ -536,7 +458,6 @@ const languageNames = {
   ko: '한국어',
 };
 
-// Language flags/icons
 const languageFlags = {
   zh: '🇨🇳',
   en: '🇺🇸',
@@ -544,172 +465,129 @@ const languageFlags = {
   ko: '🇰🇷',
 };
 
-// Get current language from localStorage or detect from browser
-function getCurrentLanguage() {
-  const saved = localStorage.getItem('meetcat-language');
-  if (saved && translations[saved]) {
-    return saved;
-  }
-  
-  // Detect from browser language
-  const browserLang = navigator.language || navigator.userLanguage;
-  const langCode = browserLang.split('-')[0];
-  
-  if (translations[langCode]) {
-    return langCode;
-  }
-  
-  return 'en'; // Default to English
-}
-
-// Set language
-function setLanguage(lang) {
-  if (!translations[lang]) {
-    console.warn(`Language ${lang} not found, falling back to en`);
-    lang = 'en';
-  }
-  
-  localStorage.setItem('meetcat-language', lang);
-  document.documentElement.lang = lang;
-  updatePageContent();
-  updateLanguageSelector();
-}
-
-// Get translation
-function t(key) {
-  const lang = getCurrentLanguage();
-  const translation = translations[lang]?.[key];
-  if (!translation) {
-    // Fallback to English
-    return translations.en?.[key] || key;
-  }
-  return translation;
-}
-
-// Update all elements with data-i18n attribute
-function updatePageContent() {
-  // Handle regular text content
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (key) {
-      const translation = t(key);
-      if (el.hasAttribute('placeholder')) {
-        el.placeholder = translation;
-      } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.value = translation;
-      } else {
-        el.textContent = translation;
-      }
-    }
-  });
-
-  // Handle aria-label attributes
-  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
-    const key = el.getAttribute('data-i18n-aria');
-    if (key) {
-      el.setAttribute('aria-label', t(key));
-    }
-  });
-
-  // Update HTML lang attribute
-  document.documentElement.lang = getCurrentLanguage();
-}
-
-// Create language selector dropdown
-function createLanguageSelector() {
-  const existingDropdown = document.querySelector('.lang-dropdown');
-  if (existingDropdown) {
-    existingDropdown.remove();
-  }
-
-  const currentLang = getCurrentLanguage();
-  const dropdown = document.createElement('div');
-  dropdown.className = 'lang-dropdown';
-  
-  Object.keys(translations).forEach(lang => {
-    const item = document.createElement('button');
-    item.className = 'lang-dropdown-item';
-    item.type = 'button';
-    if (lang === currentLang) {
-      item.classList.add('active');
-    }
-    item.innerHTML = `<span class="lang-flag">${languageFlags[lang]}</span><span>${languageNames[lang]}</span>`;
-    item.addEventListener('click', () => {
-      setLanguage(lang);
-      dropdown.classList.remove('open');
-    });
-    dropdown.appendChild(item);
-  });
-
-  return dropdown;
-}
-
-// Update language selector UI
-function updateLanguageSelector() {
-  const container = document.querySelector('.header-actions');
-  if (!container) return;
-
-  let dropdown = container.querySelector('.lang-dropdown');
-  if (!dropdown) {
-    dropdown = createLanguageSelector();
-    container.appendChild(dropdown);
-  }
-
-  // Update active state
-  dropdown.querySelectorAll('.lang-dropdown-item').forEach(item => {
-    item.classList.remove('active');
-  });
-  const currentLang = getCurrentLanguage();
-  const activeIndex = Object.keys(translations).indexOf(currentLang);
-  if (activeIndex >= 0) {
-    dropdown.children[activeIndex]?.classList.add('active');
-  }
-}
-
-// Initialize i18n
-function initI18n() {
-  // Set initial language
-  const lang = getCurrentLanguage();
-  document.documentElement.lang = lang;
-
-  // Update content
-  updatePageContent();
-
-  // Setup language switcher
-  const langSwitch = document.querySelector('.lang-switch');
-  const headerActions = document.querySelector('.header-actions');
-  
-  if (langSwitch && headerActions) {
-    // Create and append dropdown
-    const dropdown = createLanguageSelector();
-    headerActions.appendChild(dropdown);
-
-    // Toggle dropdown on click
-    langSwitch.addEventListener('click', (e) => {
-      e.stopPropagation();
-      dropdown.classList.toggle('open');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', () => {
-      dropdown.classList.remove('open');
-    });
-  }
-}
-
-// Export for global access
-window.i18n = {
-  t,
-  setLanguage,
-  getCurrentLanguage,
-  translations,
-  languageNames,
-  languageFlags,
+const langConfig = {
+  en: { dir: '', htmlLang: 'en' },
+  ja: { dir: 'ja', htmlLang: 'ja' },
+  zh: { dir: 'zh', htmlLang: 'zh' },
+  ko: { dir: 'ko', htmlLang: 'ko' },
 };
 
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initI18n);
-} else {
-  initI18n();
+function t(lang, key) {
+  return translations[lang]?.[key] || translations.en?.[key] || key;
 }
+
+function getBaseUrl(lang) {
+  return langConfig[lang].dir ? `/${langConfig[lang].dir}` : '';
+}
+
+function generateLangDropdown(currentLang) {
+  const items = Object.keys(langConfig).map(lang => {
+    const baseUrl = getBaseUrl(lang);
+    const href = baseUrl || '/';
+    const activeClass = lang === currentLang ? ' active' : '';
+    return `<a class="lang-dropdown-item${activeClass}" href="${href}"><span class="lang-flag">${languageFlags[lang]}</span><span>${languageNames[lang]}</span></a>`;
+  }).join('\n              ');
+  
+  return `<div class="lang-dropdown">
+              ${items}
+            </div>`;
+}
+
+function processHtml(html, lang) {
+  const baseUrl = getBaseUrl(lang);
+  
+  html = html.replace(/<html lang="[^"]*"/, `<html lang="${langConfig[lang].htmlLang}"`);
+  
+  html = html.replace(/data-i18n="([^"]+)"[^>]*>([^<]*)</g, (match, key, content) => {
+    const translated = t(lang, key);
+    return `data-i18n="${key}">${translated}<`;
+  });
+  
+  html = html.replace(/data-i18n-aria="([^"]+)"/g, (match, key) => {
+    const translated = t(lang, key);
+    return `data-i18n-aria="${key}" aria-label="${translated}"`;
+  });
+  
+  html = html.replace(/<title[^>]*data-i18n="([^"]+)"[^>]*>[^<]*<\/title>/g, (match, key) => {
+    const translated = t(lang, key);
+    return `<title>${translated}</title>`;
+  });
+  
+  html = html.replace(
+    /<button class="lang-switch"[^>]*>[\s\S]*?<\/button>/,
+    `<button class="lang-switch" type="button" aria-label="${t(lang, 'lang.switch')}">
+              <span class="lang-icon material-symbols-rounded" aria-hidden="true">translate</span>
+            </button>
+            ${generateLangDropdown(lang)}`
+  );
+  
+  html = html.replace(/href="\/privacy\.html"/g, `href="${baseUrl}/privacy.html"`);
+  html = html.replace(/href="\/tos\.html"/g, `href="${baseUrl}/tos.html"`);
+  html = html.replace(/href="\/#top"/g, `href="${baseUrl || '/'}#top"`);
+  html = html.replace(/href="\/" aria-label/g, `href="${baseUrl || '/'}" aria-label`);
+  
+  html = html.replace(/<script[^>]*src="\/src\/i18n\.js"[^>]*><\/script>/g, '');
+  html = html.replace(/<script type="module" src="\/src\/i18n\.js"><\/script>/g, '');
+  
+  html = html.replace(
+    '</head>',
+    `  <script>
+    document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.querySelector('.lang-dropdown')?.classList.toggle('open');
+    });
+    document.addEventListener('click', () => {
+      document.querySelector('.lang-dropdown')?.classList.remove('open');
+    });
+  </script>
+</head>`
+  );
+  
+  return html;
+}
+
+function ensureDir(dir) {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+}
+
+function generateStaticPages() {
+  const templateFiles = ['index.html', 'privacy.html', 'tos.html'];
+  
+  for (const lang of Object.keys(langConfig)) {
+    const config = langConfig[lang];
+    const outputDir = config.dir ? path.join(rootDir, config.dir) : rootDir;
+    
+    if (config.dir) {
+      ensureDir(outputDir);
+    }
+    
+    for (const file of templateFiles) {
+      const templatePath = path.join(rootDir, file);
+      if (!fs.existsSync(templatePath)) {
+        console.warn(`Template not found: ${templatePath}`);
+        continue;
+      }
+      
+      const template = fs.readFileSync(templatePath, 'utf-8');
+      const processed = processHtml(template, lang);
+      
+      const outputPath = config.dir 
+        ? path.join(outputDir, file)
+        : path.join(rootDir, file);
+      
+      if (config.dir) {
+        fs.writeFileSync(outputPath, processed, 'utf-8');
+        console.log(`Generated: ${config.dir}/${file}`);
+      } else {
+        fs.writeFileSync(outputPath, processed, 'utf-8');
+        console.log(`Generated: ${file} (${lang})`);
+      }
+    }
+  }
+  
+  console.log('\nStatic pages generated successfully!');
+}
+
+generateStaticPages();

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,25 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400&display=swap"
     />
     <link rel="stylesheet" href="/src/styles.css" />
-  </head>
+    <script>
+    document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.querySelector('.lang-dropdown')?.classList.toggle('open');
+    });
+    document.addEventListener('click', () => {
+      document.querySelector('.lang-dropdown')?.classList.remove('open');
+    });
+  </script>
+  <script>
+    document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.querySelector('.lang-dropdown')?.classList.toggle('open');
+    });
+    document.addEventListener('click', () => {
+      document.querySelector('.lang-dropdown')?.classList.remove('open');
+    });
+  </script>
+</head>
   <body id="top">
     <div class="page">
       <header class="site-header">
@@ -30,9 +48,21 @@
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
             </a>
-            <button class="lang-switch" type="button" data-i18n-aria="lang.switch" aria-label="切换语言">
+            <button class="lang-switch" type="button" aria-label="Switch language">
               <span class="lang-icon material-symbols-rounded" aria-hidden="true">translate</span>
             </button>
+            <div class="lang-dropdown">
+              <a class="lang-dropdown-item active" href="/"><span class="lang-flag">🇺🇸</span><span>English</span></a>
+              <a class="lang-dropdown-item" href="/ja"><span class="lang-flag">🇯🇵</span><span>日本語</span></a>
+              <a class="lang-dropdown-item" href="/zh"><span class="lang-flag">🇨🇳</span><span>中文</span></a>
+              <a class="lang-dropdown-item" href="/ko"><span class="lang-flag">🇰🇷</span><span>한국어</span></a>
+            </div>
+            <div class="lang-dropdown">
+              <a class="lang-dropdown-item active" href="/"><span class="lang-flag">🇺🇸</span><span>English</span></a>
+              <a class="lang-dropdown-item" href="/ja"><span class="lang-flag">🇯🇵</span><span>日本語</span></a>
+              <a class="lang-dropdown-item" href="/zh"><span class="lang-flag">🇨🇳</span><span>中文</span></a>
+              <a class="lang-dropdown-item" href="/ko"><span class="lang-flag">🇰🇷</span><span>한국어</span></a>
+            </div>
           </div>
         </div>
       </header>
@@ -43,31 +73,27 @@
             <div class="hero-text">
               <h1 class="hero-title">
                 <span class="hero-title-line">MeetCat</span>
-                <span class="hero-title-line hero-title-slogan" data-i18n="hero.slogan">再也不错过任何会议</span>
+                <span class="hero-title-line hero-title-slogan" data-i18n="hero.slogan">Never miss a meeting again</span>
               </h1>
-              <p class="hero-subtitle" data-i18n="hero.subtitle">自动识别 Google Meet 日程，倒计时提醒，一键自动加入。</p>
+              <p class="hero-subtitle" data-i18n="hero.subtitle">Auto-detect Google Meet schedules, countdown reminders, fully automatic join.</p>
               <div class="cta-buttons">
-                <a class="btn btn-primary" href="" data-disabled="true" aria-disabled="true" data-i18n="hero.cta.chrome">
-                  下载 Chrome 扩展
-                </a>
-                <a class="btn btn-secondary" href="" data-disabled="true" aria-disabled="true" data-i18n="hero.cta.app">
-                  下载 App（macOS）
-                </a>
+                <a class="btn btn-primary" href="" data-disabled="true" aria-disabled="true" data-i18n="hero.cta.chrome">Download Chrome Extension</a>
+                <a class="btn btn-secondary" href="" data-disabled="true" aria-disabled="true" data-i18n="hero.cta.app">Download App (macOS)</a>
               </div>
               <div class="hero-notes">
-                <span data-i18n="hero.notes">免费 · 开源 · 轻量 · 无广告 | Windows 稍后推出</span>
+                <span data-i18n="hero.notes">Free · Open Source · Lightweight · No Ads | Windows coming soon</span>
               </div>
             </div>
 
             <div class="hero-visual">
               <div class="float-cluster">
                 <div class="float-surface">
-                  <div class="overlay-card overlay-home" data-i18n-aria="nav.home" aria-label="MeetCat">
+                  <div class="overlay-card overlay-home" data-i18n-aria="nav.home" aria-label="MeetCat" aria-label="MeetCat" aria-label="MeetCat">
                     <img class="overlay-icon" src="/meetcat-icon.png" alt="MeetCat" />
                     <div class="overlay-copy">
-                      <div class="overlay-title"><span data-i18n="ui.next_meeting">下一场：</span>Product Brainstorm</div>
+                      <div class="overlay-title"><span data-i18n="ui.next_meeting">Next: </span>Product Brainstorm</div>
                       <div class="overlay-subtitle">
-                        <span data-i18n="ui.time_remaining">还有 </span>
+                        <span data-i18n="ui.time_remaining">in</span>
                         <span class="overlay-countdown">31:59</span>
                       </div>
                     </div>
@@ -89,29 +115,29 @@
         <section class="features">
           <div class="container">
             <div class="section-header">
-              <h2 data-i18n="features.title">核心功能，保持轻松</h2>
-              <p data-i18n="features.subtitle">智能加入，让你的日常会议节奏更加从容</p>
+              <h2 data-i18n="features.title">Core Features, Stay Relaxed</h2>
+              <p data-i18n="features.subtitle">Smart joining that keeps your daily meeting rhythm calm and collected</p>
             </div>
             <div class="feature-grid">
               <article class="feature-card tone-orange">
                 <span class="feature-badge">AUTO</span>
-                <h3 data-i18n="features.auto_join.title">智能自动加入</h3>
-                <p data-i18n="features.auto_join.desc">提前 X 分钟打开会议页，错过会议？不存在。</p>
+                <h3 data-i18n="features.auto_join.title">Smart Auto-Join</h3>
+                <p data-i18n="features.auto_join.desc">Open meeting page X minutes early. Miss a meeting? Never.</p>
               </article>
               <article class="feature-card tone-pink">
                 <span class="feature-badge">COUNT</span>
-                <h3 data-i18n="features.countdown.title">倒计时 + 随时取消</h3>
-                <p data-i18n="features.countdown.desc">会议准备的温柔倒计时，调整还是取消，随心所欲</p>
+                <h3 data-i18n="features.countdown.title">Countdown + Cancel Anytime</h3>
+                <p data-i18n="features.countdown.desc">A gentle countdown for meeting prep—adjust or cancel anytime</p>
               </article>
               <article class="feature-card tone-blue">
                 <span class="feature-badge">QUIET</span>
-                <h3 data-i18n="features.mic_cam.title">麦克风/摄像头默认状态</h3>
-                <p data-i18n="features.mic_cam.desc">进会前自动设定，让你的加入安静就绪。</p>
+                <h3 data-i18n="features.mic_cam.title">Mic/Camera Default State</h3>
+                <p data-i18n="features.mic_cam.desc">Auto-set before joining, so you enter quietly ready.</p>
               </article>
               <article class="feature-card tone-mint">
                 <span class="feature-badge">FILTER</span>
-                <h3 data-i18n="features.filter.title">会议过滤</h3>
-                <p data-i18n="features.filter.desc">提前设置，不想自动进的会议？直接跳过。</p>
+                <h3 data-i18n="features.filter.title">Meeting Filter</h3>
+                <p data-i18n="features.filter.desc">Set in advance—meetings you don't want to auto-join? Skip them.</p>
               </article>
             </div>
           </div>
@@ -120,44 +146,44 @@
         <section class="ui-showcase">
           <div class="container">
             <div class="section-header">
-              <h2 data-i18n="showcase.title">可确认的会议状态界面</h2>
-              <p data-i18n="showcase.subtitle">计时提醒、加入前确认与状态提示，清晰确认会议和状态，一切尽在掌握。</p>
+              <h2 data-i18n="showcase.title">Clear Meeting Status Interface</h2>
+              <p data-i18n="showcase.subtitle">Timer reminders, pre-join confirmation, and status indicators—everything under control.</p>
             </div>
             <div class="showcase-grid">
               <div class="showcase-item">
-                <span class="chip chip-blue" data-i18n="showcase.home_overlay">首页浮层</span>
-                <div class="overlay-card overlay-home" data-i18n-aria="showcase.home_overlay" aria-label="首页浮层">
+                <span class="chip chip-blue" data-i18n="showcase.home_overlay">Home Overlay</span>
+                <div class="overlay-card overlay-home" data-i18n-aria="showcase.home_overlay" aria-label="Home Overlay" aria-label="Home Overlay" aria-label="首页浮层">
                   <img class="overlay-icon" src="/meetcat-icon.png" alt="MeetCat" />
                   <div class="overlay-copy">
-                    <div class="overlay-title"><span data-i18n="ui.next_meeting">下一场：</span>Product Brainstorm</div>
+                    <div class="overlay-title"><span data-i18n="ui.next_meeting">Next: </span>Product Brainstorm</div>
                     <div class="overlay-subtitle">
-                      <span data-i18n="ui.time_remaining">还有 </span>
+                      <span data-i18n="ui.time_remaining">in</span>
                       <span class="overlay-countdown">31:59</span>
                     </div>
                   </div>
                 </div>
-                <p class="caption" data-i18n="showcase.home_caption">在 Meet 首页直接显示下一场会议倒计时。</p>
+                <p class="caption" data-i18n="showcase.home_caption">See next meeting countdown right on the Meet homepage.</p>
               </div>
               <div class="showcase-item">
-                <span class="chip chip-pink" data-i18n="showcase.auto_join">自动加入</span>
-                <div class="overlay-card overlay-countdown" data-i18n-aria="showcase.auto_join" aria-label="自动加入倒计时">
+                <span class="chip chip-pink" data-i18n="showcase.auto_join">Auto-Join</span>
+                <div class="overlay-card overlay-countdown" data-i18n-aria="showcase.auto_join" aria-label="Auto-Join" aria-label="Auto-Join" aria-label="自动加入倒计时">
                   <img class="overlay-icon" src="/meetcat-icon.png" alt="MeetCat" />
                   <div class="overlay-copy overlay-copy-wide">
                     <div class="overlay-title">
-                      <span data-i18n="ui.auto_join_in">自动加入还有 </span><span class="overlay-countdown">17 <span data-i18n="ui.seconds">秒</span></span>
+                      <span data-i18n="ui.auto_join_in">Auto-join in </span><span class="overlay-countdown">17 <span data-i18n="ui.seconds">s</span></span>
                     </div>
                     <div class="overlay-progress">
                       <span class="overlay-progress-fill" style="width: 72%;"></span>
                     </div>
                   </div>
-                  <button class="overlay-cancel" type="button" data-i18n="ui.cancel">取消</button>
+                  <button class="overlay-cancel" type="button" data-i18n="ui.cancel">Cancel</button>
                 </div>
-                <p class="caption" data-i18n="showcase.auto_join_caption">自动加入前的倒计时，随时可取消。</p>
+                <p class="caption" data-i18n="showcase.auto_join_caption">Countdown before auto-join, cancel anytime.</p>
               </div>
               <div class="showcase-item">
-                <span class="chip chip-orange" data-i18n="showcase.tray">状态栏显示</span>
+                <span class="chip chip-orange" data-i18n="showcase.tray">Tray Display</span>
                 <div class="tray-stack">
-                  <div class="tray-strip" data-i18n-aria="showcase.tray" aria-label="状态栏显示">
+                  <div class="tray-strip" data-i18n-aria="showcase.tray" aria-label="Tray Display" aria-label="Tray Display" aria-label="状态栏显示">
                     <div class="tray-row tray-row-top">
                       <span class="apple-logo" aria-hidden="true"></span>
                       <span>Status Bar</span>
@@ -168,7 +194,7 @@
                     </div>
                   </div>
                 </div>
-                <p class="caption" data-i18n="showcase.tray_caption">状态栏显示下一场会议时间。</p>
+                <p class="caption" data-i18n="showcase.tray_caption">See next meeting time in the status bar.</p>
               </div>
             </div>
           </div>
@@ -177,38 +203,38 @@
         <section class="how-it-works">
           <div class="container">
             <div class="section-header">
-              <h2 data-i18n="how.title">工作原理</h2>
-              <p data-i18n="how.subtitle">三步完成，安静又可靠。</p>
+              <h2 data-i18n="how.title">How It Works</h2>
+              <p data-i18n="how.subtitle">Three steps, quiet and reliable.</p>
             </div>
             <div class="steps">
               <div class="step-card">
                 <div class="step-index">01</div>
                 <div>
-                  <h3 data-i18n="how.step1.title">识别会议</h3>
-                  <p data-i18n="how.step1.desc">在 Meet 首页解析会议列表。</p>
+                  <h3 data-i18n="how.step1.title">Detect Meetings</h3>
+                  <p data-i18n="how.step1.desc">Parse meeting list on the Meet homepage. You need to open the Meet homepage in a browser with the extension installed, or using the desktop app. After logging into your Google account and opening the Meet homepage, confirm that the next meeting overlay is displayed.</p>
                 </div>
               </div>
               <div class="step-card">
                 <div class="step-index">02</div>
                 <div>
-                  <h3 data-i18n="how.step2.title">安排触发时间</h3>
-                  <p data-i18n="how.step2.desc">根据设置决定何时进入会议页。</p>
+                  <h3 data-i18n="how.step2.title">Schedule Trigger</h3>
+                  <p data-i18n="how.step2.desc">Decide when to open the meeting page based on settings. Confirm microphone and camera settings on the meeting preparation page. Once you enter the meeting preparation page, the countdown will begin.</p>
                 </div>
               </div>
               <div class="step-card">
                 <div class="step-index">03</div>
                 <div>
-                  <h3 data-i18n="how.step3.title">自动加入</h3>
-                  <p data-i18n="how.step3.desc">倒计时结束后自动点击加入。</p>
+                  <h3 data-i18n="how.step3.title">Auto-Join</h3>
+                  <p data-i18n="how.step3.desc">When the countdown ends, the system will automatically join the meeting according to your settings. Say goodbye to being late due to forgotten meetings—ensure every meeting starts on time.</p>
                 </div>
               </div>
             </div>
             <div class="privacy-note">
-              <h3 data-i18n="privacy.note.title">隐私与数据安全</h3>
+              <h3 data-i18n="privacy.note.title">Privacy & Data Security</h3>
               <div class="privacy-grid">
-                <div class="privacy-pill" data-i18n="privacy.pill1">不收集也不保存任何信息</div>
-                <div class="privacy-pill" data-i18n="privacy.pill2">纯本地运行，无联网部分</div>
-                <div class="privacy-pill" data-i18n="privacy.pill3">解析与处理都在本地完成</div>
+                <div class="privacy-pill" data-i18n="privacy.pill1">No data collection or storage</div>
+                <div class="privacy-pill" data-i18n="privacy.pill2">Runs locally, no network</div>
+                <div class="privacy-pill" data-i18n="privacy.pill3">Parsing & processing local only</div>
               </div>
             </div>
           </div>
@@ -217,26 +243,26 @@
         <section class="platforms">
           <div class="container">
             <div class="section-header">
-              <h2 data-i18n="platforms.title">两种形态，一样顺手</h2>
-              <p data-i18n="platforms.subtitle">浏览器轻量，桌面稳定。按你的节奏选择。</p>
+              <h2 data-i18n="platforms.title">Two Forms, Same Smooth Experience</h2>
+              <p data-i18n="platforms.subtitle">Browser is light, desktop is stable. Choose your pace.</p>
             </div>
             <div class="platform-grid">
               <article class="platform-card tone-blue">
-                <h3 data-i18n="platforms.chrome.title">Chrome 扩展</h3>
-                <p data-i18n="platforms.chrome.desc">浏览器内轻量运行，自动打开会议页面。</p>
+                <h3 data-i18n="platforms.chrome.title">Chrome Extension</h3>
+                <p data-i18n="platforms.chrome.desc">Lightweight in-browser, auto-opens meeting pages.</p>
                 <ul>
-                  <li data-i18n="platforms.chrome.feat1">自动触发加入</li>
-                  <li data-i18n="platforms.chrome.feat2">Meet 首页提示</li>
-                  <li data-i18n="platforms.chrome.feat3">同步设置</li>
+                  <li data-i18n="platforms.chrome.feat1">Auto-trigger join</li>
+                  <li data-i18n="platforms.chrome.feat2">Meet homepage alerts</li>
+                  <li data-i18n="platforms.chrome.feat3">Sync settings</li>
                 </ul>
               </article>
               <article class="platform-card tone-orange">
-                <h3 data-i18n="platforms.desktop.title">桌面 App</h3>
-                <p data-i18n="platforms.desktop.desc">稳定的桌面体验，系统托盘随时可见。</p>
+                <h3 data-i18n="platforms.desktop.title">Desktop App</h3>
+                <p data-i18n="platforms.desktop.desc">Stable desktop experience, always visible in system tray.</p>
                 <ul>
-                  <li data-i18n="platforms.desktop.feat1">托盘状态展示</li>
-                  <li data-i18n="platforms.desktop.feat2">开机自启</li>
-                  <li data-i18n="platforms.desktop.feat3">独立设置窗口</li>
+                  <li data-i18n="platforms.desktop.feat1">Tray status display</li>
+                  <li data-i18n="platforms.desktop.feat2">Auto-start on boot</li>
+                  <li data-i18n="platforms.desktop.feat3">Dedicated meeting window</li>
                 </ul>
               </article>
             </div>
@@ -246,16 +272,12 @@
         <section class="cta-band">
           <div class="container cta-inner">
             <div>
-              <h2 data-i18n="cta.title">准备好不再错过会议了吗？</h2>
-              <p data-i18n="cta.subtitle">安静工作，只在你需要时出场。</p>
+              <h2 data-i18n="cta.title">Ready to never miss a meeting?</h2>
+              <p data-i18n="cta.subtitle">Works quietly, only appears when you need it.</p>
             </div>
             <div class="cta-buttons stacked">
-              <a class="btn btn-primary" href="" data-disabled="true" aria-disabled="true" data-i18n="hero.cta.chrome">
-                下载 Chrome 扩展
-              </a>
-              <a class="btn btn-secondary" href="" data-disabled="true" aria-disabled="true" data-i18n="hero.cta.app">
-                下载 App（macOS）
-              </a>
+              <a class="btn btn-primary" href="" data-disabled="true" aria-disabled="true" data-i18n="hero.cta.chrome">Download Chrome Extension</a>
+              <a class="btn btn-secondary" href="" data-disabled="true" aria-disabled="true" data-i18n="hero.cta.app">Download App (macOS)</a>
             </div>
           </div>
         </section>
@@ -272,13 +294,13 @@
             </span>
           </div>
           <div class="footer-links">
-            <a href="/privacy.html" data-i18n="nav.privacy">隐私</a>
-            <a href="/tos.html" data-i18n="nav.terms">条款</a>
+            <a href="/privacy.html" data-i18n="nav.privacy">Privacy</a>
+            <a href="/tos.html" data-i18n="nav.terms">Terms</a>
           </div>
         </div>
       </footer>
     </div>
 
-    <script type="module" src="/src/i18n.js"></script>
+    
   </body>
 </html>

@@ -2,3 +2,8 @@ node_modules
 /dist
 /.codex
 .DS_Store
+
+# Generated i18n static pages
+/ja
+/zh
+/ko
