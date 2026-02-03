@@ -52,6 +52,7 @@ img {
 .container {
   width: min(1180px, 94vw);
   margin: 0 auto;
+  padding: 0 clamp(16px, 2.5vw, 28px);
 }
 
 .site-header {
