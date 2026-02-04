@@ -1,0 +1,21 @@
+[build]
+  command = "node scripts/generate-static.js && vite build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/"
+  to = "/ja"
+  status = 302
+  conditions = { Language = ["ja"] }
+
+[[redirects]]
+  from = "/"
+  to = "/zh"
+  status = 302
+  conditions = { Language = ["zh"] }
+
+[[redirects]]
+  from = "/"
+  to = "/ko"
+  status = 302
+  conditions = { Language = ["ko"] }

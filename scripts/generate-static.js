@@ -479,7 +479,7 @@ function t(lang, key) {
 }
 
 function getLanguageHref(lang) {
-  return lang === 'en' ? '/en' : `/${lang}`;
+  return `/${lang}`;
 }
 
 function generateLangDropdown(currentLang) {
