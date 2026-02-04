@@ -5,6 +5,8 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
 
+const siteConfigScript = '<script type="module" src="/src/site-config.js"></script>';
+
 const translations = {
   zh: {
     'nav.home': 'MeetCat',
@@ -462,27 +464,27 @@ const languageNames = {
   ko: '한국어',
 };
 
+const languages = ['en', 'ja', 'zh', 'ko'];
 
-
-const langConfig = {
-  en: { dir: '', htmlLang: 'en' },
-  ja: { dir: 'ja', htmlLang: 'ja' },
-  zh: { dir: 'zh', htmlLang: 'zh' },
-  ko: { dir: 'ko', htmlLang: 'ko' },
-};
+const outputTargets = [
+  { lang: 'en', dir: '', htmlLang: 'en' },
+  { lang: 'ja', dir: 'ja', htmlLang: 'ja' },
+  { lang: 'zh', dir: 'zh', htmlLang: 'zh' },
+  { lang: 'ko', dir: 'ko', htmlLang: 'ko' },
+  { lang: 'en', dir: 'en', htmlLang: 'en' },
+];
 
 function t(lang, key) {
   return translations[lang]?.[key] || translations.en?.[key] || key;
 }
 
-function getBaseUrl(lang) {
-  return langConfig[lang].dir ? `/${langConfig[lang].dir}` : '';
+function getLanguageHref(lang) {
+  return lang === 'en' ? '/en' : `/${lang}`;
 }
 
 function generateLangDropdown(currentLang) {
-  const items = Object.keys(langConfig).map(lang => {
-    const baseUrl = getBaseUrl(lang);
-    const href = baseUrl || '/';
+  const items = languages.map(lang => {
+    const href = getLanguageHref(lang);
     const activeClass = lang === currentLang ? ' active' : '';
     return `<a class="lang-dropdown-item${activeClass}" href="${href}">${languageNames[lang]}</a>`;
   }).join('\n              ');
@@ -492,10 +494,10 @@ function generateLangDropdown(currentLang) {
             </div>`;
 }
 
-function processHtml(html, lang) {
-  const baseUrl = getBaseUrl(lang);
+function processHtml(html, lang, config) {
+  const baseUrl = config.baseUrl;
   
-  html = html.replace(/<html lang="[^"]*"/, `<html lang="${langConfig[lang].htmlLang}"`);
+  html = html.replace(/<html lang="[^"]*"/, `<html lang="${config.htmlLang}"`);
   
   html = html.replace(/data-i18n="([^"]+)"[^>]*>([^<]*)</g, (match, key, content) => {
     const translated = t(lang, key);
@@ -534,9 +536,15 @@ function processHtml(html, lang) {
   
   html = html.replace(/<script>\s*document\.querySelector\('\.lang-switch'\)[\s\S]*?<\/script>\s*/g, '');
   
+  const needsCtaScript = html.includes('data-i18n="hero.cta.chrome"')
+    || html.includes('data-i18n="hero.cta.app"');
+  const ctaScriptTag = needsCtaScript && !html.includes(siteConfigScript)
+    ? `${siteConfigScript}\n`
+    : '';
+
   html = html.replace(
     '</body>',
-    `<script>
+    `${ctaScriptTag}<script>
     document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
       e.stopPropagation();
       document.querySelector('.lang-dropdown')?.classList.toggle('open');
@@ -560,11 +568,11 @@ function ensureDir(dir) {
 function generateStaticPages() {
   const templateFiles = ['index.html', 'privacy.html', 'tos.html'];
   
-  for (const lang of Object.keys(langConfig)) {
-    const config = langConfig[lang];
-    const outputDir = config.dir ? path.join(rootDir, config.dir) : rootDir;
+  for (const target of outputTargets) {
+    const outputDir = target.dir ? path.join(rootDir, target.dir) : rootDir;
+    const baseUrl = target.dir ? `/${target.dir}` : '';
     
-    if (config.dir) {
+    if (target.dir) {
       ensureDir(outputDir);
     }
     
@@ -576,18 +584,18 @@ function generateStaticPages() {
       }
       
       const template = fs.readFileSync(templatePath, 'utf-8');
-      const processed = processHtml(template, lang);
+      const processed = processHtml(template, target.lang, { baseUrl, htmlLang: target.htmlLang });
       
-      const outputPath = config.dir 
+      const outputPath = target.dir
         ? path.join(outputDir, file)
         : path.join(rootDir, file);
       
-      if (config.dir) {
+      if (target.dir) {
         fs.writeFileSync(outputPath, processed, 'utf-8');
-        console.log(`Generated: ${config.dir}/${file}`);
+        console.log(`Generated: ${target.dir}/${file}`);
       } else {
         fs.writeFileSync(outputPath, processed, 'utf-8');
-        console.log(`Generated: ${file} (${lang})`);
+        console.log(`Generated: ${file} (${target.lang})`);
       }
     }
   }
