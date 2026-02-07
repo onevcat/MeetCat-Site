@@ -693,7 +693,7 @@ function renderReleaseEntries(lang, entries) {
     return `<div class="release-empty" data-i18n="release.empty">${escapeHtml(t(lang, 'release.empty'))}</div>`;
   }
 
-  return entries.map((entry) => {
+  return entries.map((entry, index) => {
     const versionLabel = entry.version.toLowerCase() === 'unreleased'
       ? entry.version
       : entry.version.replace(/^v/i, '');
@@ -703,6 +703,9 @@ function renderReleaseEntries(lang, entries) {
       : `<a class="release-version-link" href="https://github.com/onevcat/MeetCat/releases/tag/${escapeHtml(releaseTag)}" target="_blank" rel="noopener noreferrer">${escapeHtml(versionLabel)}</a>`;
     const dateHtml = entry.date
       ? `<time class="release-date" datetime="${escapeHtml(entry.date)}">${escapeHtml(entry.date)}</time>`
+      : '';
+    const latestBadgeHtml = index === 0
+      ? '<span class="chip chip-latest release-latest-badge">Latest Version</span>'
       : '';
 
     const summaryHtml = entry.summary
@@ -725,7 +728,9 @@ function renderReleaseEntries(lang, entries) {
 
     return `<article class="release-card">
               <header class="release-card-header">
-                <h2 class="release-version">${versionHtml}</h2>
+                <div class="release-title-row">
+                  <h2 class="release-version">${versionHtml}</h2>${latestBadgeHtml}
+                </div>
                 ${dateHtml}
               </header>
               ${summaryHtml}
@@ -738,13 +743,20 @@ function t(lang, key) {
   return translations[lang]?.[key] || translations.en?.[key] || key;
 }
 
-function getLanguageHref(lang) {
-  return `/${lang}`;
+function getLanguageHref(lang, currentFile) {
+  const isIndexPage = currentFile === 'index.html';
+  if (lang === 'en') {
+    return isIndexPage ? '/' : `/${currentFile}`;
+  }
+
+  return isIndexPage
+    ? `/${lang}/index.html`
+    : `/${lang}/${currentFile}`;
 }
 
-function generateLangDropdown(currentLang) {
+function generateLangDropdown(currentLang, currentFile) {
   const items = languages.map(lang => {
-    const href = getLanguageHref(lang);
+    const href = getLanguageHref(lang, currentFile);
     const activeClass = lang === currentLang ? ' active' : '';
     return `<a class="lang-dropdown-item${activeClass}" href="${href}">${languageNames[lang]}</a>`;
   }).join('\n              ');
@@ -756,6 +768,7 @@ function generateLangDropdown(currentLang) {
 
 function processHtml(html, lang, config) {
   const baseUrl = config.baseUrl;
+  const currentFile = config.currentFile || 'index.html';
   
   html = html.replace(/<html lang="[^"]*"/, `<html lang="${config.htmlLang}"`);
   
@@ -800,14 +813,23 @@ function processHtml(html, lang, config) {
     `<button class="lang-switch" type="button" aria-label="${t(lang, 'lang.switch')}">
               <span class="lang-icon material-symbols-rounded" aria-hidden="true">translate</span>
             </button>
-            ${generateLangDropdown(lang)}`
+            ${generateLangDropdown(lang, currentFile)}`
   );
 
   html = html.replace(/\n\s*\n\s*\n/g, '\n\n');
   
-  html = html.replace(/href="\/privacy\.html"/g, `href="${baseUrl}/privacy.html"`);
-  html = html.replace(/href="\/release\.html"/g, 'href="/release.html"');
-  html = html.replace(/href="\/tos\.html"/g, `href="${baseUrl}/tos.html"`);
+  html = html.replace(
+    /<a href="\/privacy\.html" data-i18n="nav\.privacy">/g,
+    `<a href="${baseUrl}/privacy.html" data-i18n="nav.privacy">`
+  );
+  html = html.replace(
+    /<a href="\/release\.html" data-i18n="nav\.releases">/g,
+    '<a href="/release.html" data-i18n="nav.releases">'
+  );
+  html = html.replace(
+    /<a href="\/tos\.html" data-i18n="nav\.terms">/g,
+    `<a href="${baseUrl}/tos.html" data-i18n="nav.terms">`
+  );
   html = html.replace(/href="\/#top"/g, `href="${baseUrl || '/'}#top"`);
   html = html.replace(/href="\/" aria-label/g, `href="${baseUrl || '/'}" aria-label`);
   
@@ -888,6 +910,7 @@ function generateStaticPages() {
       const processed = processHtml(template, target.lang, {
         baseUrl,
         htmlLang: target.htmlLang,
+        currentFile: file,
         changelogMeta: changelogData.meta,
         releaseEntriesHtml,
       });
