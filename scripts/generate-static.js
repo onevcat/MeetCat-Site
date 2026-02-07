@@ -11,6 +11,7 @@ const translations = {
   zh: {
     'nav.home': 'MeetCat',
     'nav.privacy': '隐私',
+    'nav.releases': '更新日志',
     'nav.terms': '条款',
     'lang.switch': '切换语言',
     'footer.made_with': 'Made with',
@@ -75,6 +76,18 @@ const translations = {
     'platforms.desktop.feat3': '独立会议窗口',
     'cta.title': '准备好不再错过会议了吗？',
     'cta.subtitle': 'MeetCat 帮你准时入会，迟到从此与你无关。',
+    'release.title': 'MeetCat 更新日志',
+    'release.eyebrow': '版本时间线',
+    'release.page_title': '追踪 MeetCat 的每一次更新',
+    'release.page_subtitle': '本页面内容同步自主仓库 CHANGELOG，按版本清晰呈现已发布变更。',
+    'release.source_link': '在 GitHub 查看源文件',
+    'release.updated_label': '最近同步',
+    'release.empty': '暂时没有可展示的发布记录。',
+    'release.section.added': '新增',
+    'release.section.changed': '变更',
+    'release.section.fixed': '修复',
+    'release.section.removed': '移除',
+    'release.section.security': '安全',
     'privacy.title': 'MeetCat 隐私政策',
     'privacy.page_title': '隐私政策',
     'privacy.effective_date': '生效日期：2026年2月1日',
@@ -123,6 +136,7 @@ const translations = {
   en: {
     'nav.home': 'MeetCat',
     'nav.privacy': 'Privacy',
+    'nav.releases': 'Releases',
     'nav.terms': 'Terms',
     'lang.switch': 'Switch language',
     'footer.made_with': 'Made with',
@@ -187,6 +201,18 @@ const translations = {
     'platforms.desktop.feat3': 'Dedicated meeting window',
     'cta.title': 'Ready to never miss a meeting?',
     'cta.subtitle': 'MeetCat gets you into meetings on time—being late is no longer on you.',
+    'release.title': 'MeetCat Release Notes',
+    'release.eyebrow': 'Release Timeline',
+    'release.page_title': 'Track Every MeetCat Change',
+    'release.page_subtitle': 'Pulled from the main repository changelog, this page gives you one visual timeline for what shipped and what changed.',
+    'release.source_link': 'View source on GitHub',
+    'release.updated_label': 'Last synced',
+    'release.empty': 'No published releases are available yet.',
+    'release.section.added': 'Added',
+    'release.section.changed': 'Changed',
+    'release.section.fixed': 'Fixed',
+    'release.section.removed': 'Removed',
+    'release.section.security': 'Security',
     'privacy.title': 'MeetCat Privacy Policy',
     'privacy.page_title': 'Privacy Policy',
     'privacy.effective_date': 'Effective Date: February 1, 2026',
@@ -235,6 +261,7 @@ const translations = {
   ja: {
     'nav.home': 'MeetCat',
     'nav.privacy': 'プライバシー',
+    'nav.releases': 'リリース',
     'nav.terms': '利用規約',
     'lang.switch': '言語を切り替え',
     'footer.made_with': 'Made with',
@@ -299,6 +326,18 @@ const translations = {
     'platforms.desktop.feat3': '専用ミーティングウィンドウ',
     'cta.title': 'もうミーティングを見逃さない準備はできましたか？',
     'cta.subtitle': 'MeetCat が時間通りの参加をサポート。遅刻はもうあなたのせいじゃない。',
+    'release.title': 'MeetCat リリースノート',
+    'release.eyebrow': 'リリースタイムライン',
+    'release.page_title': 'MeetCat の変更履歴を追跡',
+    'release.page_subtitle': 'このページはメインリポジトリの CHANGELOG と同期され、リリースごとの変更を見やすく表示します。',
+    'release.source_link': 'GitHub でソースを見る',
+    'release.updated_label': '最終同期',
+    'release.empty': '表示できる公開リリースはまだありません。',
+    'release.section.added': '追加',
+    'release.section.changed': '変更',
+    'release.section.fixed': '修正',
+    'release.section.removed': '削除',
+    'release.section.security': 'セキュリティ',
     'privacy.title': 'MeetCat プライバシーポリシー',
     'privacy.page_title': 'プライバシーポリシー',
     'privacy.effective_date': '発効日：2026年2月1日',
@@ -347,6 +386,7 @@ const translations = {
   ko: {
     'nav.home': 'MeetCat',
     'nav.privacy': '개인정보',
+    'nav.releases': '릴리즈',
     'nav.terms': '약관',
     'lang.switch': '언어 전환',
     'footer.made_with': 'Made with',
@@ -411,6 +451,18 @@ const translations = {
     'platforms.desktop.feat3': '전용 회의 창',
     'cta.title': '더 이상 회의를 놓치지 않을 준비가 되셨나요?',
     'cta.subtitle': 'MeetCat이 회의에 제때 들어가도록 도와줍니다—지각은 더 이상 당신 탓이 아닙니다.',
+    'release.title': 'MeetCat 릴리즈 노트',
+    'release.eyebrow': '릴리즈 타임라인',
+    'release.page_title': 'MeetCat 변경 사항 추적',
+    'release.page_subtitle': '메인 저장소 CHANGELOG에서 동기화되어, 릴리즈별 변경 내용을 한눈에 확인할 수 있습니다.',
+    'release.source_link': 'GitHub 원본 보기',
+    'release.updated_label': '마지막 동기화',
+    'release.empty': '표시할 공개 릴리즈가 아직 없습니다.',
+    'release.section.added': '추가',
+    'release.section.changed': '변경',
+    'release.section.fixed': '수정',
+    'release.section.removed': '삭제',
+    'release.section.security': '보안',
     'privacy.title': 'MeetCat 개인정보 처리방침',
     'privacy.page_title': '개인정보 처리방침',
     'privacy.effective_date': '발효일: 2026년 2월 1일',
@@ -474,6 +526,214 @@ const outputTargets = [
   { lang: 'en', dir: 'en', htmlLang: 'en' },
 ];
 
+const changelogSourceUrl = 'https://github.com/onevcat/MeetCat/blob/master/CHANGELOG.md';
+const changelogPath = path.join(rootDir, 'src', 'changelog.md');
+const changelogMetaPath = path.join(rootDir, 'src', 'changelog.meta.json');
+
+function escapeHtml(value) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function readChangelogData() {
+  let markdown = '';
+  let meta = {
+    sourceUrl: changelogSourceUrl,
+    syncedAt: '',
+  };
+
+  if (fs.existsSync(changelogPath)) {
+    markdown = fs.readFileSync(changelogPath, 'utf-8');
+  }
+
+  if (fs.existsSync(changelogMetaPath)) {
+    try {
+      const parsedMeta = JSON.parse(fs.readFileSync(changelogMetaPath, 'utf-8'));
+      meta = {
+        ...meta,
+        ...parsedMeta,
+      };
+    } catch (error) {
+      console.warn(`Failed to parse ${changelogMetaPath}: ${error.message}`);
+    }
+  }
+
+  return { markdown, meta };
+}
+
+function hasReleaseContent(entry) {
+  const hasSummary = entry.summary.some(item => item.trim().length > 0);
+  const hasSections = entry.sections.some(section => section.items.some(item => item.trim().length > 0));
+  return hasSummary || hasSections;
+}
+
+function parseChangelog(markdown) {
+  const lines = markdown.split(/\r?\n/);
+  const entries = [];
+  let currentEntry = null;
+  let currentSection = null;
+
+  const commitCurrentEntry = () => {
+    if (!currentEntry) {
+      return;
+    }
+
+    currentEntry.summary = currentEntry.summary.filter(item => item.trim().length > 0);
+    currentEntry.sections = currentEntry.sections
+      .map(section => ({
+        ...section,
+        items: section.items.filter(item => item.trim().length > 0),
+      }))
+      .filter(section => section.items.length > 0);
+
+    if (currentEntry.version.toLowerCase() === 'unreleased' && !hasReleaseContent(currentEntry)) {
+      return;
+    }
+
+    entries.push(currentEntry);
+  };
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    const versionMatch = trimmed.match(/^## \[(.+?)\](?: - (\d{4}-\d{2}-\d{2}))?$/);
+    if (versionMatch) {
+      commitCurrentEntry();
+      currentEntry = {
+        version: versionMatch[1],
+        date: versionMatch[2] || '',
+        summary: [],
+        sections: [],
+      };
+      currentSection = null;
+      continue;
+    }
+
+    if (!currentEntry) {
+      continue;
+    }
+
+    const sectionMatch = trimmed.match(/^###\s+(.+)$/);
+    if (sectionMatch) {
+      currentSection = {
+        title: sectionMatch[1].trim(),
+        items: [],
+      };
+      currentEntry.sections.push(currentSection);
+      continue;
+    }
+
+    const itemMatch = trimmed.match(/^- (.+)$/);
+    if (itemMatch) {
+      if (currentSection) {
+        currentSection.items.push(itemMatch[1].trim());
+      } else {
+        currentEntry.summary.push(itemMatch[1].trim());
+      }
+      continue;
+    }
+
+    if (!trimmed) {
+      continue;
+    }
+
+    if (currentSection && currentSection.items.length > 0) {
+      const lastIndex = currentSection.items.length - 1;
+      currentSection.items[lastIndex] = `${currentSection.items[lastIndex]} ${trimmed}`;
+      continue;
+    }
+
+    currentEntry.summary.push(trimmed);
+  }
+
+  commitCurrentEntry();
+  return entries;
+}
+
+function resolveSectionKey(title) {
+  const normalized = title.toLowerCase();
+  if (normalized === 'added') {
+    return 'added';
+  }
+  if (normalized === 'changed') {
+    return 'changed';
+  }
+  if (normalized === 'fixed') {
+    return 'fixed';
+  }
+  if (normalized === 'removed') {
+    return 'removed';
+  }
+  if (normalized === 'security') {
+    return 'security';
+  }
+  return null;
+}
+
+function formatUtcTimestamp(isoString) {
+  const parsed = new Date(isoString);
+  if (Number.isNaN(parsed.getTime())) {
+    return '--';
+  }
+
+  const year = parsed.getUTCFullYear();
+  const month = String(parsed.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(parsed.getUTCDate()).padStart(2, '0');
+  const hours = String(parsed.getUTCHours()).padStart(2, '0');
+  const minutes = String(parsed.getUTCMinutes()).padStart(2, '0');
+
+  return `${year}-${month}-${day} ${hours}:${minutes} UTC`;
+}
+
+function renderReleaseEntries(lang, entries) {
+  if (entries.length === 0) {
+    return `<div class="release-empty" data-i18n="release.empty">${escapeHtml(t(lang, 'release.empty'))}</div>`;
+  }
+
+  return entries.map((entry) => {
+    const versionLabel = entry.version.toLowerCase() === 'unreleased'
+      ? entry.version
+      : (entry.version.startsWith('v') ? entry.version : `v${entry.version}`);
+    const releaseTag = entry.version.replace(/^v/i, '');
+    const versionHtml = entry.version.toLowerCase() === 'unreleased'
+      ? escapeHtml(versionLabel)
+      : `<a class="release-version-link" href="https://github.com/onevcat/MeetCat/releases/tag/${escapeHtml(releaseTag)}" target="_blank" rel="noopener noreferrer">${escapeHtml(versionLabel)}</a>`;
+    const dateHtml = entry.date
+      ? `<time class="release-date" datetime="${escapeHtml(entry.date)}">${escapeHtml(entry.date)}</time>`
+      : '';
+
+    const summaryHtml = entry.summary
+      .map(summary => `<p class="release-summary">${escapeHtml(summary)}</p>`)
+      .join('');
+
+    const groupsHtml = entry.sections.map((section) => {
+      const sectionKey = resolveSectionKey(section.title);
+      const sectionClass = sectionKey ? ` release-group-${sectionKey}` : '';
+      const titleHtml = sectionKey
+        ? `<h3 data-i18n="release.section.${sectionKey}">${escapeHtml(t(lang, `release.section.${sectionKey}`))}</h3>`
+        : `<h3>${escapeHtml(section.title)}</h3>`;
+      const items = section.items.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+
+      return `<section class="release-group${sectionClass}">
+                ${titleHtml}
+                <ul>${items}</ul>
+              </section>`;
+    }).join('');
+
+    return `<article class="release-card">
+              <header class="release-card-header">
+                <h2 class="release-version">${versionHtml}</h2>
+                ${dateHtml}
+              </header>
+              ${summaryHtml}
+              <div class="release-groups">${groupsHtml}</div>
+            </article>`;
+  }).join('\n');
+}
+
 function t(lang, key) {
   return translations[lang]?.[key] || translations.en?.[key] || key;
 }
@@ -509,10 +769,29 @@ function processHtml(html, lang, config) {
     return `data-i18n-aria="${key}" aria-label="${translated}"`;
   });
   
-  html = html.replace(/<title[^>]*data-i18n="([^"]+)"[^>]*>[^<]*<\/title>/g, (match, key) => {
+  html = html.replace(/(<title[^>]*data-i18n="([^"]+)"[^>]*>)[^<]*(<\/title>)/g, (match, prefix, key, suffix) => {
     const translated = t(lang, key);
-    return `<title>${translated}</title>`;
+    return `${prefix}${translated}${suffix}`;
   });
+
+  if (html.includes('<!-- RELEASE_ENTRIES_START -->')) {
+    const releaseBlock = [
+      '<!-- RELEASE_ENTRIES_START -->',
+      config.releaseEntriesHtml || '',
+      '<!-- RELEASE_ENTRIES_END -->',
+    ].join('\n            ');
+    html = html.replace(/<!-- RELEASE_ENTRIES_START -->[\s\S]*?<!-- RELEASE_ENTRIES_END -->/, releaseBlock);
+  }
+
+  if (html.includes('data-release-updated-at')) {
+    const syncedAt = config.changelogMeta?.syncedAt || '';
+    const syncedAtLabel = formatUtcTimestamp(syncedAt);
+    const syncedAtDatetime = syncedAt ? escapeHtml(syncedAt) : '';
+    html = html.replace(
+      /<time data-release-updated-at[^>]*>[^<]*<\/time>/,
+      `<time data-release-updated-at datetime="${syncedAtDatetime}">${escapeHtml(syncedAtLabel)}</time>`
+    );
+  }
   
   html = html.replace(/<div class="lang-dropdown">[\s\S]*?<\/div>/g, '');
   
@@ -527,6 +806,7 @@ function processHtml(html, lang, config) {
   html = html.replace(/\n\s*\n\s*\n/g, '\n\n');
   
   html = html.replace(/href="\/privacy\.html"/g, `href="${baseUrl}/privacy.html"`);
+  html = html.replace(/href="\/release\.html"/g, 'href="/release.html"');
   html = html.replace(/href="\/tos\.html"/g, `href="${baseUrl}/tos.html"`);
   html = html.replace(/href="\/#top"/g, `href="${baseUrl || '/'}#top"`);
   html = html.replace(/href="\/" aria-label/g, `href="${baseUrl || '/'}" aria-label`);
@@ -536,15 +816,14 @@ function processHtml(html, lang, config) {
   
   html = html.replace(/<script>\s*document\.querySelector\('\.lang-switch'\)[\s\S]*?<\/script>\s*/g, '');
   
+  const hasLangSwitch = html.includes('class="lang-switch"');
   const needsCtaScript = html.includes('data-i18n="hero.cta.chrome"')
     || html.includes('data-i18n="hero.cta.app"');
   const ctaScriptTag = needsCtaScript && !html.includes(siteConfigScript)
     ? `${siteConfigScript}\n`
     : '';
-
-  html = html.replace(
-    '</body>',
-    `${ctaScriptTag}<script>
+  const langScriptTag = hasLangSwitch
+    ? `<script>
     document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
       e.stopPropagation();
       document.querySelector('.lang-dropdown')?.classList.toggle('open');
@@ -553,7 +832,12 @@ function processHtml(html, lang, config) {
       document.querySelector('.lang-dropdown')?.classList.remove('open');
     });
   </script>
-</body>`
+`
+    : '';
+
+  html = html.replace(
+    '</body>',
+    `${ctaScriptTag}${langScriptTag}</body>`
   );
   
   return html;
@@ -566,25 +850,47 @@ function ensureDir(dir) {
 }
 
 function generateStaticPages() {
-  const templateFiles = ['index.html', 'privacy.html', 'tos.html'];
+  const rootTemplateFiles = ['index.html', 'privacy.html', 'release.html', 'tos.html'];
+  const localizedTemplateFiles = ['index.html', 'privacy.html', 'tos.html'];
+  const changelogData = readChangelogData();
+  const changelogEntries = parseChangelog(changelogData.markdown);
+  const templates = new Map();
+  const skipRootOutput = process.argv.includes('--skip-root');
+  const targets = skipRootOutput
+    ? outputTargets.filter(target => target.dir !== '')
+    : outputTargets;
+
+  for (const file of rootTemplateFiles) {
+    const templatePath = path.join(rootDir, file);
+    if (!fs.existsSync(templatePath)) {
+      console.warn(`Template not found: ${templatePath}`);
+      continue;
+    }
+    templates.set(file, fs.readFileSync(templatePath, 'utf-8'));
+  }
   
-  for (const target of outputTargets) {
+  for (const target of targets) {
     const outputDir = target.dir ? path.join(rootDir, target.dir) : rootDir;
     const baseUrl = target.dir ? `/${target.dir}` : '';
+    const releaseEntriesHtml = renderReleaseEntries(target.lang, changelogEntries);
+    const templateFiles = target.dir ? localizedTemplateFiles : rootTemplateFiles;
     
     if (target.dir) {
       ensureDir(outputDir);
     }
     
     for (const file of templateFiles) {
-      const templatePath = path.join(rootDir, file);
-      if (!fs.existsSync(templatePath)) {
-        console.warn(`Template not found: ${templatePath}`);
+      const template = templates.get(file);
+      if (!template) {
         continue;
       }
-      
-      const template = fs.readFileSync(templatePath, 'utf-8');
-      const processed = processHtml(template, target.lang, { baseUrl, htmlLang: target.htmlLang });
+
+      const processed = processHtml(template, target.lang, {
+        baseUrl,
+        htmlLang: target.htmlLang,
+        changelogMeta: changelogData.meta,
+        releaseEntriesHtml,
+      });
       
       const outputPath = target.dir
         ? path.join(outputDir, file)

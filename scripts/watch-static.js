@@ -25,7 +25,7 @@ function runGenerate() {
   }
 
   running = true;
-  const child = spawn('node', ['scripts/generate-static.js'], {
+  const child = spawn('node', ['scripts/generate-static.js', '--skip-root'], {
     cwd: rootDir,
     stdio: 'inherit',
   });

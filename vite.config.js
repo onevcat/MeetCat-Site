@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         privacy: resolve(__dirname, "privacy.html"),
+        release: resolve(__dirname, "release.html"),
         tos: resolve(__dirname, "tos.html"),
         "ja/index": resolve(__dirname, "ja/index.html"),
         "ja/privacy": resolve(__dirname, "ja/privacy.html"),
