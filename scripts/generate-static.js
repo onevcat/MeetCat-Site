@@ -696,7 +696,7 @@ function renderReleaseEntries(lang, entries) {
   return entries.map((entry) => {
     const versionLabel = entry.version.toLowerCase() === 'unreleased'
       ? entry.version
-      : (entry.version.startsWith('v') ? entry.version : `v${entry.version}`);
+      : entry.version.replace(/^v/i, '');
     const releaseTag = entry.version.replace(/^v/i, '');
     const versionHtml = entry.version.toLowerCase() === 'unreleased'
       ? escapeHtml(versionLabel)
