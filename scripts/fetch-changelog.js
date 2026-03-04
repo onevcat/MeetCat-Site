@@ -8,6 +8,8 @@ const rootDir = path.resolve(__dirname, '..');
 const REPO_OWNER = 'onevcat';
 const REPO_NAME = 'MeetCat';
 const LATEST_RELEASE_API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/releases/latest`;
+const RELEASE_BY_TAG_API_URL = (tag) =>
+  `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/releases/tags/${encodeURIComponent(tag)}`;
 const changelogPath = path.join(rootDir, 'src', 'changelog.md');
 const metadataPath = path.join(rootDir, 'src', 'changelog.meta.json');
 
@@ -106,6 +108,44 @@ async function getLatestReleaseTag() {
   return tag;
 }
 
+function toUtcDateString(isoString) {
+  const parsed = new Date(isoString);
+  if (Number.isNaN(parsed.getTime())) {
+    return '';
+  }
+
+  const year = parsed.getUTCFullYear();
+  const month = String(parsed.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(parsed.getUTCDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+async function getReleasePublishedInfo(tag) {
+  if (!tag) {
+    return null;
+  }
+
+  const response = await fetch(RELEASE_BY_TAG_API_URL(tag), {
+    headers: {
+      'User-Agent': 'MeetCat-Site Changelog Sync',
+      Accept: 'application/vnd.github+json',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to resolve release metadata for ${tag}: HTTP ${response.status}`);
+  }
+
+  const payload = await response.json();
+  const publishedAt = payload?.published_at || '';
+  const publishedDate = publishedAt ? toUtcDateString(publishedAt) : '';
+
+  return {
+    publishedAt,
+    publishedDate,
+  };
+}
+
 function hasLocalChangelog() {
   if (!fs.existsSync(changelogPath)) {
     return false;
@@ -115,13 +155,15 @@ function hasLocalChangelog() {
   return content.length > 0;
 }
 
-function writeFiles(markdown, sourceUrl, sourceTag) {
+function writeFiles(markdown, sourceUrl, sourceTag, releaseInfo) {
   const normalizedMarkdown = markdown.endsWith('\n') ? markdown : `${markdown}\n`;
   const syncedAt = new Date().toISOString();
   const metadata = {
     sourceUrl,
     sourceTag,
     syncedAt,
+    sourcePublishedAt: releaseInfo?.publishedAt || '',
+    sourcePublishedDate: releaseInfo?.publishedDate || '',
   };
 
   fs.writeFileSync(changelogPath, normalizedMarkdown, 'utf-8');
@@ -144,7 +186,7 @@ async function resolveReleaseTag() {
   return getLatestReleaseTag();
 }
 
-async function fetchChangelog(sourceUrl, sourceTag) {
+async function fetchChangelog(sourceUrl, sourceTag, releaseInfo) {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 12000);
 
@@ -165,7 +207,7 @@ async function fetchChangelog(sourceUrl, sourceTag) {
       throw new Error('Received empty changelog content');
     }
 
-    writeFiles(markdown, sourceUrl, sourceTag);
+    writeFiles(markdown, sourceUrl, sourceTag, releaseInfo);
     return;
   } finally {
     clearTimeout(timeoutId);
@@ -176,9 +218,16 @@ async function main() {
   try {
     const releaseTag = await resolveReleaseTag();
     const sourceUrl = buildSourceUrl(releaseTag);
+    let releaseInfo = null;
 
     console.log(`Fetching changelog from tag: ${releaseTag}`);
-    await fetchChangelog(sourceUrl, releaseTag);
+    try {
+      releaseInfo = await getReleasePublishedInfo(releaseTag);
+    } catch (error) {
+      console.warn(`Failed to fetch release metadata for ${releaseTag}: ${error.message}`);
+    }
+
+    await fetchChangelog(sourceUrl, releaseTag, releaseInfo);
   } catch (error) {
     if (hasLocalChangelog()) {
       console.warn(`Failed to fetch upstream changelog. Using local cache. ${error.message}`);

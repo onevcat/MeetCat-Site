@@ -673,6 +673,10 @@ function resolveSectionKey(title) {
   return null;
 }
 
+function normalizeTagForComparison(input) {
+  return String(input || '').trim().replace(/^v/i, '');
+}
+
 function formatUtcTimestamp(isoString) {
   const parsed = new Date(isoString);
   if (Number.isNaN(parsed.getTime())) {
@@ -688,21 +692,32 @@ function formatUtcTimestamp(isoString) {
   return `${year}-${month}-${day} ${hours}:${minutes} UTC`;
 }
 
-function renderReleaseEntries(lang, entries) {
+function renderReleaseEntries(lang, entries, changelogMeta = {}) {
   if (entries.length === 0) {
     return `<div class="release-empty" data-i18n="release.empty">${escapeHtml(t(lang, 'release.empty'))}</div>`;
   }
+
+  const sourceTag = normalizeTagForComparison(changelogMeta.sourceTag || '');
+  const sourcePublishedDate = String(changelogMeta.sourcePublishedDate || '');
 
   return entries.map((entry, index) => {
     const versionLabel = entry.version.toLowerCase() === 'unreleased'
       ? entry.version
       : entry.version.replace(/^v/i, '');
     const releaseTag = entry.version.replace(/^v/i, '');
+    const fallbackDate =
+      !entry.date &&
+      sourcePublishedDate &&
+      sourceTag &&
+      normalizeTagForComparison(releaseTag) === sourceTag
+        ? sourcePublishedDate
+        : '';
+    const displayDate = entry.date || fallbackDate;
     const versionHtml = entry.version.toLowerCase() === 'unreleased'
       ? escapeHtml(versionLabel)
       : `<a class="release-version-link" href="https://github.com/onevcat/MeetCat/releases/tag/${escapeHtml(releaseTag)}" target="_blank" rel="noopener noreferrer">${escapeHtml(versionLabel)}</a>`;
-    const dateHtml = entry.date
-      ? `<time class="release-date" datetime="${escapeHtml(entry.date)}">${escapeHtml(entry.date)}</time>`
+    const dateHtml = displayDate
+      ? `<time class="release-date" datetime="${escapeHtml(displayDate)}">${escapeHtml(displayDate)}</time>`
       : '';
     const latestBadgeHtml = index === 0
       ? '<span class="chip chip-latest release-latest-badge">Latest Version</span>'
@@ -894,7 +909,7 @@ function generateStaticPages() {
   for (const target of targets) {
     const outputDir = target.dir ? path.join(rootDir, target.dir) : rootDir;
     const baseUrl = target.dir ? `/${target.dir}` : '';
-    const releaseEntriesHtml = renderReleaseEntries(target.lang, changelogEntries);
+    const releaseEntriesHtml = renderReleaseEntries(target.lang, changelogEntries, changelogData.meta);
     const templateFiles = target.dir ? localizedTemplateFiles : rootTemplateFiles;
     
     if (target.dir) {

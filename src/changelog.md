@@ -7,6 +7,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5]
+
+Auto updating support is now integrated for the macOS desktop app, with user-visible prompts across tray, settings, and overlay before installation.
+
+### Added
+
+- Added auto updating support for the macOS app, including startup/daily checks, tray/settings/overlay prompts, release notes, and explicit user-confirmed installation.
+
+### Changed
+
+- Changed stale-homepage recovery to detect wake-from-sleep and trigger controlled homepage refresh after wake.
+- Changed stale-homepage policy to force refresh after long unchanged sessions (foreground included) for better overnight/session-long reliability.
+
+### Fixed
+
+- Fixed homepage freshness handling to reduce stale meeting lists during long-running sessions and after system wake.
+
+## [0.0.4] - 2026-02-09
+
+A reliability-focused release for homepage freshness and long-running stability across both the Chrome extension and the macOS app.
+
+### Added
+
+- macOS app menu now includes a Refresh Home command with Cmd+R, and the Meet homepage listens for the shortcut.
+
+### Changed
+
+- Homepage stale recovery now uses a fingerprint-based watchdog with foreground-aware behavior: while the homepage is focused, reloads are deferred until the tab or window loses focus.
+- Repeated stale states now use exponential backoff (30 → 60 → 120 minutes) with a daily reload cap, improving stability without causing refresh loops.
+
+### Fixed
+
+- Auto-join now stops once the meeting is entered, preventing countdowns from persisting or triggering an unintended leave click.
+- Homepage meeting list refreshes are more reliable, with background-triggered updates and automatic recovery after repeated parse failures.
+- Long-idle and cross-day homepage sessions now recover automatically when meeting data remains unchanged for too long, reducing cases where stale meeting lists persist.
+
 ## [0.0.3] - 2026-02-05
 
 Improves homepage meeting parsing reliability and meeting close detection.
