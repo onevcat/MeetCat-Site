@@ -7,7 +7,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.5]
+## [0.0.9] - 2026-04-11
+
+Stability fix for homepage reload getting permanently stuck.
+
+### Fixed
+
+- Fixed homepage reload getting permanently locked when the reload flag was never cleared, requiring a restart to recover.
+
+## [0.0.8] - 2026-03-18
+
+Improved overnight reliability and reduced disruptive background refreshes.
+
+### Fixed
+
+- Fixed white screen after overnight sleep that required a restart to recover.
+- Fixed background page refresh stealing window focus from other apps.
+- Fixed unnecessary page refreshes every 30 minutes for users with few or no meetings.
+
+## [0.0.7] - 2026-03-11
+
+- Fixed update install button not reflecting correct state after triggering an update from the tray menu.
+
+## [0.0.6] - 2026-03-11
+
+Multi-language support across major MeetCat surfaces, a quicker Settings shortcut on macOS, and a fix for tray-triggered update checks.
+
+### Added
+
+- Added UI localization in English, Chinese, Japanese, and Korean across the tray menu, macOS app menu, settings screens, homepage overlay, join countdown, and Chrome extension popup.
+- Added a language selector in Settings, with Auto detection plus English, Chinese, Japanese, and Korean options.
+- Added a Settings menu item with the standard Cmd+, shortcut in the macOS app menu.
+
+### Fixed
+
+- Fixed update dialog not showing on first "Check for Updates" click from the tray menu.
+
+## [0.0.5] - 2026-03-04
 
 Auto updating support is now integrated for the macOS desktop app, with user-visible prompts across tray, settings, and overlay before installation.
 
