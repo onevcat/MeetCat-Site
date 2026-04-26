@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FFF4E8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <title data-i18n="urlscheme.page_title">URL Scheme</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400&display=swap"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+    </head>
+  <body class="legal-page urlscheme-page" id="top">
+    <div class="page">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a href="/" aria-label="MeetCat Home">
+            <img class="logo" src="/meetcat-logo.png" alt="MeetCat" />
+          </a>
+          <div class="header-actions">
+            <a class="github-link" href="https://github.com/onevcat/MeetCat" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <button class="lang-switch" type="button" aria-label="Switch language">
+              <span class="lang-icon material-symbols-rounded" aria-hidden="true">translate</span>
+            </button>
+            <div class="lang-dropdown">
+              <a class="lang-dropdown-item active" href="/url-scheme.html">English</a>
+              <a class="lang-dropdown-item" href="/ja/url-scheme.html">日本語</a>
+              <a class="lang-dropdown-item" href="/zh/url-scheme.html">中文</a>
+              <a class="lang-dropdown-item" href="/ko/url-scheme.html">한국어</a>
+            </div>
+
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="container legal-hero">
+          <h1 data-i18n="urlscheme.page_title">URL Scheme</h1>
+          <p data-i18n="urlscheme.lead">Drive MeetCat from other apps, scripts, and launchers (such as Alfred or Raycast) using the meetcat:// URL scheme.</p>
+        </section>
+
+        <section class="container legal-content">
+          <div>
+            <h2 data-i18n="urlscheme.platform.title">Platform</h2>
+            <p data-i18n="urlscheme.platform.text">URL Scheme is currently macOS-only. Install MeetCat once so the system registers the meetcat:// scheme before invoking it from other apps.</p>
+          </div>
+
+          <div>
+            <h2 data-i18n="urlscheme.actions.title">Available actions</h2>
+            <p data-i18n="urlscheme.actions.intro">Open any of the URLs below from any app or script that can open URLs.</p>
+            <div class="urlscheme-table-wrap">
+              <table class="urlscheme-table">
+                <thead>
+                  <tr>
+                    <th data-i18n="urlscheme.actions.col_url">URL</th>
+                    <th data-i18n="urlscheme.actions.col_action">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>meetcat://join/&lt;code&gt;</code></td>
+                    <td data-i18n="urlscheme.actions.row_join_path">Join the meeting (path form).</td>
+                  </tr>
+                  <tr>
+                    <td><code>meetcat://join?id=&lt;code&gt;</code></td>
+                    <td data-i18n="urlscheme.actions.row_join_query">Join the meeting (query form).</td>
+                  </tr>
+                  <tr>
+                    <td><code>meetcat://meet.google.com/&lt;code&gt;</code></td>
+                    <td data-i18n="urlscheme.actions.row_meet_mirror">Join the meeting. Replace https with meetcat in any Google Meet link.</td>
+                  </tr>
+                  <tr>
+                    <td><code>meetcat://meet.google.com/lookup/&lt;id&gt;</code></td>
+                    <td data-i18n="urlscheme.actions.row_meet_lookup">Join via a Google Meet lookup link.</td>
+                  </tr>
+                  <tr>
+                    <td><code>meetcat://home</code></td>
+                    <td data-i18n="urlscheme.actions.row_home">Show the Google Meet home page in MeetCat.</td>
+                  </tr>
+                  <tr>
+                    <td><code>meetcat://settings</code></td>
+                    <td data-i18n="urlscheme.actions.row_settings">Open the MeetCat Settings window.</td>
+                  </tr>
+                  <tr>
+                    <td><code>meetcat://new</code></td>
+                    <td data-i18n="urlscheme.actions.row_new">Start a new instant meeting.</td>
+                  </tr>
+                  <tr>
+                    <td><code>meetcat://check-update</code></td>
+                    <td data-i18n="urlscheme.actions.row_check_update">Check for MeetCat updates.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p data-i18n="urlscheme.actions.code_note">Meeting codes follow the standard Google Meet format xxx-xxxx-xxx, for example abc-defg-hij.</p>
+          </div>
+
+          <div>
+            <h2 data-i18n="urlscheme.autojoin.title">Join behavior</h2>
+            <p data-i18n="urlscheme.autojoin.lead">When you join a meeting via URL Scheme, MeetCat follows your Auto-click Join setting (on by default).</p>
+            <ul>
+              <li data-i18n="urlscheme.autojoin.on">When Auto-click Join is on: MeetCat applies your mic and camera defaults on the meeting preview page, runs the join countdown, and clicks Join automatically when it ends.</li>
+              <li data-i18n="urlscheme.autojoin.off">When Auto-click Join is off: MeetCat opens the preview page and still applies your mic and camera defaults, but waits for you to click Join.</li>
+            </ul>
+            <p data-i18n="urlscheme.autojoin.override">URL Scheme links cannot override this setting per link. Adjust Auto-click Join in MeetCat Settings if you want different behavior.</p>
+          </div>
+
+          <div>
+            <h2 data-i18n="urlscheme.examples.title">Examples</h2>
+            <p data-i18n="urlscheme.examples.terminal_label">From Terminal:</p>
+            <pre class="urlscheme-code"><code>open "meetcat://join/abc-defg-hij"
+open "meetcat://settings"
+open "meetcat://new"</code></pre>
+            <p data-i18n="urlscheme.examples.applescript_label">From AppleScript or Shortcuts:</p>
+            <pre class="urlscheme-code"><code>do shell script "open 'meetcat://join/abc-defg-hij'"</code></pre>
+            <p data-i18n="urlscheme.examples.launcher_label">From Alfred or Raycast:</p>
+            <p data-i18n="urlscheme.examples.launcher_text">Configure an "Open URL" action and set the URL to a meetcat:// link, for example meetcat://join/abc-defg-hij.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div class="footer-topline">
+            <a class="footer-home" href="/#top">MeetCat</a>
+            <div class="footer-links">
+              <a href="/release.html" data-i18n="nav.releases">Releases</a>
+              <a href="/url-scheme.html" data-i18n="nav.url_scheme">URL Scheme</a>
+              <a href="/privacy.html" data-i18n="nav.privacy">Privacy</a>
+              <a href="/tos.html" data-i18n="nav.terms">Terms</a>
+            </div>
+          </div>
+          <div class="footer-credit">
+            <span data-i18n="footer.made_with">Made with</span> <span class="footer-heart">♥</span> <span data-i18n="footer.by">by</span>
+            <a href="https://x.com/onevcat">@onevcat</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+<script>
+    document.querySelector('.lang-switch')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.querySelector('.lang-dropdown')?.classList.toggle('open');
+    });
+    document.addEventListener('click', () => {
+      document.querySelector('.lang-dropdown')?.classList.remove('open');
+    });
+  </script>
+</body>
+</html>

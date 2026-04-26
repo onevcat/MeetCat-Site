@@ -41,7 +41,7 @@
               </a>
               <span class="release-updated">
                 <span data-i18n="release.updated_label">Last synced</span>
-                <time data-release-updated-at datetime="2026-03-04T15:36:53.113Z">2026-03-04 15:36 UTC</time>
+                <time data-release-updated-at datetime="2026-04-26T13:26:19.931Z">2026-04-26 13:26 UTC</time>
               </span>
             </div>
           </div>
@@ -53,7 +53,59 @@
             <article class="release-card">
               <header class="release-card-header">
                 <div class="release-title-row">
-                  <h2 class="release-version"><a class="release-version-link" href="https://github.com/onevcat/MeetCat/releases/tag/0.0.5" target="_blank" rel="noopener noreferrer">0.0.5</a></h2><span class="chip chip-latest release-latest-badge">Latest Version</span>
+                  <h2 class="release-version"><a class="release-version-link" href="https://github.com/onevcat/MeetCat/releases/tag/0.0.9" target="_blank" rel="noopener noreferrer">0.0.9</a></h2><span class="chip chip-latest release-latest-badge">Latest Version</span>
+                </div>
+                <time class="release-date" datetime="2026-04-11">2026-04-11</time>
+              </header>
+              <p class="release-summary">Stability fix for homepage reload getting permanently stuck.</p>
+              <div class="release-groups"><section class="release-group release-group-fixed">
+                <h3 data-i18n="release.section.fixed">Fixed</h3>
+                <ul><li>Fixed homepage reload getting permanently locked when the reload flag was never cleared, requiring a restart to recover.</li></ul>
+              </section></div>
+            </article>
+<article class="release-card">
+              <header class="release-card-header">
+                <div class="release-title-row">
+                  <h2 class="release-version"><a class="release-version-link" href="https://github.com/onevcat/MeetCat/releases/tag/0.0.8" target="_blank" rel="noopener noreferrer">0.0.8</a></h2>
+                </div>
+                <time class="release-date" datetime="2026-03-18">2026-03-18</time>
+              </header>
+              <p class="release-summary">Improved overnight reliability and reduced disruptive background refreshes.</p>
+              <div class="release-groups"><section class="release-group release-group-fixed">
+                <h3 data-i18n="release.section.fixed">Fixed</h3>
+                <ul><li>Fixed white screen after overnight sleep that required a restart to recover.</li><li>Fixed background page refresh stealing window focus from other apps.</li><li>Fixed unnecessary page refreshes every 30 minutes for users with few or no meetings.</li></ul>
+              </section></div>
+            </article>
+<article class="release-card">
+              <header class="release-card-header">
+                <div class="release-title-row">
+                  <h2 class="release-version"><a class="release-version-link" href="https://github.com/onevcat/MeetCat/releases/tag/0.0.7" target="_blank" rel="noopener noreferrer">0.0.7</a></h2>
+                </div>
+                <time class="release-date" datetime="2026-03-11">2026-03-11</time>
+              </header>
+              <p class="release-summary">Fixed update install button not reflecting correct state after triggering an update from the tray menu.</p>
+              <div class="release-groups"></div>
+            </article>
+<article class="release-card">
+              <header class="release-card-header">
+                <div class="release-title-row">
+                  <h2 class="release-version"><a class="release-version-link" href="https://github.com/onevcat/MeetCat/releases/tag/0.0.6" target="_blank" rel="noopener noreferrer">0.0.6</a></h2>
+                </div>
+                <time class="release-date" datetime="2026-03-11">2026-03-11</time>
+              </header>
+              <p class="release-summary">Multi-language support across major MeetCat surfaces, a quicker Settings shortcut on macOS, and a fix for tray-triggered update checks.</p>
+              <div class="release-groups"><section class="release-group release-group-added">
+                <h3 data-i18n="release.section.added">Added</h3>
+                <ul><li>Added UI localization in English, Chinese, Japanese, and Korean across the tray menu, macOS app menu, settings screens, homepage overlay, join countdown, and Chrome extension popup.</li><li>Added a language selector in Settings, with Auto detection plus English, Chinese, Japanese, and Korean options.</li><li>Added a Settings menu item with the standard Cmd+, shortcut in the macOS app menu.</li></ul>
+              </section><section class="release-group release-group-fixed">
+                <h3 data-i18n="release.section.fixed">Fixed</h3>
+                <ul><li>Fixed update dialog not showing on first &quot;Check for Updates&quot; click from the tray menu.</li></ul>
+              </section></div>
+            </article>
+<article class="release-card">
+              <header class="release-card-header">
+                <div class="release-title-row">
+                  <h2 class="release-version"><a class="release-version-link" href="https://github.com/onevcat/MeetCat/releases/tag/0.0.5" target="_blank" rel="noopener noreferrer">0.0.5</a></h2>
                 </div>
                 <time class="release-date" datetime="2026-03-04">2026-03-04</time>
               </header>
@@ -134,6 +186,7 @@
             <a class="footer-home" href="/#top">MeetCat</a>
             <div class="footer-links">
               <a href="/release.html" data-i18n="nav.releases">Releases</a>
+              <a href="/url-scheme.html" data-i18n="nav.url_scheme">URL Scheme</a>
               <a href="/privacy.html" data-i18n="nav.privacy">Privacy</a>
               <a href="/tos.html" data-i18n="nav.terms">Terms</a>
             </div>
